@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/04 17:15:49 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/04 17:42:59 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ t_list					*lst_pop(t_list **lst);
 void					lst_push(t_list **dst, t_list **src);
 void					lst_rotate(t_list **lst);
 void					lst_rev_rotate(t_list **lst);
+void					lst_append(t_list *dst, t_list *ins);
+void					lst_insert(t_list *dst, t_list *ins);
 
 #endif
