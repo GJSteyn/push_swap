@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:57:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/04 16:47:51 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/04 17:14:48 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,60 @@ void		lst_push(t_list **dst, t_list **src)
 {
 	t_list		*tmp;
 
-	if (*dst && *src)
+	if (*src)
 	{
 		tmp = lst_pop(src);
 		tmp->next = *dst;
 		*dst = tmp;
+	}
+}
+
+/* Rotate:
+ * Shift up all elements of a stack by 1.
+ * The first element becomes the last one.
+ */
+
+void		lst_rotate(t_list **lst)
+{
+	t_list		*tmp;
+	t_list		*move;
+
+	if (*lst)
+	{
+		tmp = *lst;
+		move = *lst;
+		*lst = (*lst)->next;
+		while (tmp->next)
+			tmp = tmp->next;
+		move->next = NULL;
+		tmp->next = move;
+	}
+}
+
+/* Reverse Rotate:
+ * Shift down all elements of a stack by 1.
+ * The last element becomes the first one.
+ */
+
+void		lst_rev_rotate(t_list **lst)
+{
+	t_list		*tmp;
+	t_list		*move;
+
+	if (*lst)
+	{
+		if (ft_lstlen(*lst) == 1)
+			return ;
+		tmp = *lst;
+		while (tmp->next)
+		{
+			if (!(tmp->next->next))
+				break;
+			tmp = tmp->next;
+		}
+		move = tmp->next;
+		tmp->next = NULL;
+		move->next = *lst
+		*lst = move;
 	}
 }
