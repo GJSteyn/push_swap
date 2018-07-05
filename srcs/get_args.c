@@ -10,13 +10,16 @@ t_list		*get_args(int arc, char **arv)
 {
 	t_list		*ret;
 	t_list		*tmp;
-	int		i;
+	int			curr;
+	int			i;
 
-	ret = ft_lstnew(ft_atoi(arv[1]), sizeof(int));
+	curr = ft_atoi(arv[1]);
+	ret = ft_lstnew(&curr, sizeof(int));
 	i = 1;
 	while (++i < arc)
 	{
-		tmp = ft_lstnew(ft_atoi(arv[i]), sizeof(int));
+		curr = ft_atoi(arv[i]);
+		tmp = ft_lstnew(&curr, sizeof(int));
 		lst_append(ret, tmp);
 	}
 	return (ret);

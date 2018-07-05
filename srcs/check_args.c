@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/03 11:53:28 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/05 14:03:16 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		args_valid(int arc, char **arv)
 	i = 1;
 	while (i < arc)
 	{
-		if (!ft_only_digits(arv[i]) || !args_are_ints()
+		if (!ft_only_digits(arv[i]) || !args_are_ints(arc, arv))
 			return (0);
 	}
 	return (1);
@@ -42,4 +42,4 @@ int		args_are_ints(int arc, char **arv)
 	return (1);
 }
 
-int		no_duplicates(
+//int		no_duplicates(
