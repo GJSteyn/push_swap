@@ -6,12 +6,10 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/06 11:54:33 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/06 12:02:31 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "get_next_line.h"
 #include "push_swap.h"
 
 int		main(int arc, char **arv)
