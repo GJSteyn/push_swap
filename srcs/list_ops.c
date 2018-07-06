@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:57:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/05 14:08:34 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/06 08:06:06 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void		lst_rev_rotate(t_list **lst)
 		}
 		move = tmp->next;
 		tmp->next = NULL;
-		move->next = *lst
+		move->next = *lst;
 		*lst = move;
 	}
 }
