@@ -6,7 +6,7 @@
 #    By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/06 09:52:39 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/06 10:14:40 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME1 = push_swap
 NAME2 = checker
 FILES = push_swap.c checker.c check_args.c get_args.c list_ops.c \
 		list_ops2.c
-SRCS1 = $(patsubst checker.c, , $(patsubst %.c, srcs/%.c, $(FILES)))
-SRCS2 = $(patsubst push_swap.c, "", $(patsubst %.c, srcs/%.c, $(FILES)))
-OBJS1 = $(patsubst checker.c, "", $(patsubst %.c, bin/%.o, $(FILES))) ./bin/get_next_line.o
-OBJS2 = $(patsubst push_swap.c, , $(patsubst %.c, bin/%.o, $(FILES))) ./bin/get_next_line.o
+SRCS1 = $(patsubst srcs/checker.c, , $(patsubst %.c, srcs/%.c, $(FILES)))
+SRCS2 = $(patsubst srcs/push_swap.c, , $(patsubst %.c, srcs/%.c, $(FILES)))
+OBJS1 = $(patsubst bin/checker.o, , $(patsubst %.c, bin/%.o, $(FILES))) ./bin/get_next_line.o
+OBJS2 = $(patsubst bin/push_swap.o, , $(patsubst %.c, bin/%.o, $(FILES))) ./bin/get_next_line.o
 FLAGS = -Wall -Wextra -Werror
 INCLUDES = -I libft -I gnl -I includes
 LIBS = libft/libft.a
