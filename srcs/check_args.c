@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/05 14:03:16 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/06 10:51:30 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int		args_valid(int arc, char **arv)
 {
 	int		i;
 
-	i = 1;
-	while (i < arc)
+	i = 0;
+	if (arc == 1)
+		return (0);
+	while (++i < arc)
 	{
 		if (!ft_only_digits(arv[i]) || !args_are_ints(arc, arv))
 			return (0);
