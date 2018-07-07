@@ -6,14 +6,14 @@
 #    By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/06 10:56:42 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/07 12:09:23 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME1 = push_swap
 NAME2 = checker
 FILES = check_args.c get_args.c list_ops.c \
-		list_ops2.c
+		list_ops2.c is_sorted.c
 SRCS =  $(patsubst %.c, srcs/%.c, $(FILES))
 OBJS = $(patsubst %.c, bin/%.o, $(FILES)) ./bin/get_next_line.o
 FLAGS = -Wall -Wextra -Werror
@@ -41,7 +41,7 @@ libs:
 gnl:
 	gcc -c $(FLAGS) $(INCLUDES) -o ./bin/get_next_line.o $(GNL)
 
-$(OBJS):
+$(OBJS): $(SRCS)
 	gcc -c $(INCLUDES) $(FLAGS) $(SRCS)
 	mv *.o ./bin
 

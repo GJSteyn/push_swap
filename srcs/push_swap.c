@@ -6,11 +6,12 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/06 12:02:31 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/07 12:03:25 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "checker.h"
 
 int		main(int arc, char **arv)
 {
@@ -24,11 +25,9 @@ int		main(int arc, char **arv)
 		return (0);
 	}
 	args = get_args(arc, arv);
-	while (args)
-	{
-		ft_putnbr(*((int*)(args->content)));
-		ft_putchar('\n');
-		args = args->next;
-	}
+	if (is_sorted(args))
+		ft_putstr_fd("Sorted\n", 2);
+	else
+		ft_putstr_fd("Not sorted\n", 2);
 	return (0);
 }
