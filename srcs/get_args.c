@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/09 10:27:56 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/09 17:36:55 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_list		*get_args(int arc, char **arv)
 				lst_append(ret, tmp);
 			}
 		}
-		//ft_strldel(&split);
+		ft_strldel(&split);
 	}
 	return (ret);
 }

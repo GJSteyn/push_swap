@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/09 13:59:21 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/09 17:59:10 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,42 +18,45 @@ int		args_valid(int arc, char **arv)
 {
 	char	**split;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = -1;
 	if (arc == 1)
 		return (0);
 	while (++i < arc)
 	{
 		split = ft_strsplit(arv[i], ' ');
-		while (split[++j])
+		if (!args_are_nums(split))
 		{
-			if (!ft_is_num(split[j]))
-			{
-				ft_strldel(&split);
-				return (0);
-			}
-		}
-		if (!args_are_ints(arc, arv))
+			ft_strldel(&split);
 			return (0);
+		}
 		ft_strldel(&split);
 	}
 	return (1);
 }
 
-int		args_are_ints(int arc, char **arv)
+int		args_are_nums(char **args)
 {
-	int			i;
-	long		result;
+	int		i;
 
-	i = 0;
-	while (++i < arc)
+	i = -1;
+	while (args[++i])
 	{
-		result = ft_atoi(arv[i]);
-		if (result > 2147483647 || result < -2147483648)
+		if (!ft_is_num(args[i]))
+			return (0);
+		if (!arg_is_int(args[i]))
 			return (0);
 	}
+	return (1);
+}
+
+int		arg_is_int(char *arg)
+{
+	long		result;
+
+	result = ft_atol(arg);
+	if (result > 2147483647 || result < -2147483648)
+		return (0);
 	return (1);
 }
 
