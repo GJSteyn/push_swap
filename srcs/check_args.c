@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/06 10:51:30 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/09 13:59:21 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,28 @@
 
 int		args_valid(int arc, char **arv)
 {
+	char	**split;
 	int		i;
+	int		j;
 
 	i = 0;
+	j = -1;
 	if (arc == 1)
 		return (0);
 	while (++i < arc)
 	{
-		if (!ft_only_digits(arv[i]) || !args_are_ints(arc, arv))
+		split = ft_strsplit(arv[i], ' ');
+		while (split[++j])
+		{
+			if (!ft_is_num(split[j]))
+			{
+				ft_strldel(&split);
+				return (0);
+			}
+		}
+		if (!args_are_ints(arc, arv))
 			return (0);
+		ft_strldel(&split);
 	}
 	return (1);
 }
