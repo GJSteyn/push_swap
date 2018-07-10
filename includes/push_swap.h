@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 11:15:46 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 11:23:21 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,7 @@ void					rev_rotate_both(t_s_hold *stacks);
 t_s_hold				*sh_init(t_list *sa, t_list *sb);
 
 void					debugger(t_s_hold *stacks);
+
+void					push_and_swap(t_s_hold *stacks);
 
 #endif
