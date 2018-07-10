@@ -6,13 +6,23 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 07:00:41 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 07:11:38 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "checker.h"
 #include "push_swap.h"
+
+static int		arg_is_int(char *arg)
+{
+	long		result;
+
+	result = ft_atol(arg);
+	if (result > 2147483647 || result < -2147483648)
+		return (0);
+	return (1);
+}
 
 static int		args_are_nums(char **args)
 {
@@ -26,16 +36,6 @@ static int		args_are_nums(char **args)
 		if (!arg_is_int(args[i]))
 			return (0);
 	}
-	return (1);
-}
-
-static int		arg_is_int(char *arg)
-{
-	long		result;
-
-	result = ft_atol(arg);
-	if (result > 2147483647 || result < -2147483648)
-		return (0);
 	return (1);
 }
 

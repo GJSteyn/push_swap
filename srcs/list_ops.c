@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:57:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 08:34:28 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 09:21:01 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		lst_swap(t_list **lst)
 
 	if (*lst && (*lst)->next)
 	{
-		tmp = *lst->next;
+		tmp = (*lst)->next;
 		(*lst)->next = tmp->next;
 		tmp->next = *lst;
 		*lst = tmp;
