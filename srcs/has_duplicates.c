@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 07:02:34 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 07:08:10 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 07:13:01 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int			has_duplicates(t_list *lst)
 		while (lst)
 		{
 			tmp = lst;
-			curr = tmp->content
+			curr = *(int*)tmp->content;
 			while (tmp->next)
 			{
-				if (curr == tmp->next->content)
+				if (curr == *(int*)(tmp->next->content))
 					return (1);
 				tmp = tmp->next;
 			}
