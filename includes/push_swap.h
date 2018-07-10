@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/05 13:53:25 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 08:18:14 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ void					lst_append(t_list *dst, t_list *ins);
 void					lst_insert(t_list *dst, t_list *ins);
 
 t_list					*get_args(int arc, char **arv);
+
+void					run_instructions(t_list *args);
 
 #endif
