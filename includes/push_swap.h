@@ -6,12 +6,24 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 08:54:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 09:05:21 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define SA(c) ft_strcmp(c, "sa") == 0 ? 1 : 0
+# define SB(c) ft_strcmp(c, "sb") == 0 ? 1 : 0
+# define SS(c) ft_strcmp(c, "ss") == 0 ? 1 : 0
+# define PA(c) ft_strcmp(c, "pa") == 0 ? 1 : 0
+# define PB(c) ft_strcmp(c, "pb") == 0 ? 1 : 0
+# define RA(c) ft_strcmp(c, "ra") == 0 ? 1 : 0
+# define RB(c) ft_strcmp(c, "rb") == 0 ? 1 : 0
+# define RR(c) ft_strcmp(c, "rr") == 0 ? 1 : 0
+# define RRA(c) ft_strcmp(c, "rra") == 0 ? 1 : 0
+# define RRB(c) ft_strcmp(c, "rrb") == 0 ? 1 : 0
+# define RRR(c) ft_strcmp(c, "rrr") == 0 ? 1 : 0
 
 # include "libft.h"
 # include "get_next_line.h"
