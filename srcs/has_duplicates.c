@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   no_duplicates.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/03 11:30:19 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 07:08:39 by gsteyn           ###   ########.fr       */
+/*   Created: 2018/07/10 07:02:34 by gsteyn            #+#    #+#             */
+/*   Updated: 2018/07/10 07:08:10 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#include "checker.h"
 
-# include "libft.h"
-# include "get_next_line.h"
-# include "push_swap.h"
-# include <unistd.h>
-# include <stdlib.h>
+int			has_duplicates(t_list *lst)
+{
+	int			curr;
+	t_list		*tmp;
 
-int					args_valid(int arc, char **arv);
-
-int					is_sorted(t_list *lst);
-int					is_sorted_rev(t_list *lst);
-
-int					has_duplicates(t_list *lst);
-
-#endif
+	if (lst)
+	{
+		while (lst)
+		{
+			tmp = lst;
+			curr = tmp->content
+			while (tmp->next)
+			{
+				if (curr == tmp->next->content)
+					return (1);
+				tmp = tmp->next;
+			}
+			lst = lst->next;
+		}
+	}
+	return (0);
+}
