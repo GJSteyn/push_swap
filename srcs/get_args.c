@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 13:23:18 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 13:58:15 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,28 @@ t_list		*get_args(int arc, char **arv)
 	return (ret);
 }
 
-static void	sorted_insert(int in, t_list *lst)
+static void	sorted_insert(t_list **dst, t_list *insert)
 {
+	int		largest;
+	int		smallest;
+	t_list	*tmp;
 
+	tmp = *dst;
+	smallest = *(int*)tmp->content;
+	while (tmp->next)
+		tmp = tmp->next;
+	largest = *(int*)tmp->content;
+	if (*(int*)insert->content < smallest)
+		lst_push(dst, &insert);
+	else if (*(int*)insert->content > largest)
+		lst_append(*dst, insert);
+	else
+	{
+		tmp = *dst;
+		while (*(int*)tmp->next->content < *(int*)insert->content)
+			tmp = tmp->next;
+		lst_insert(tmp, insert);
+	}
 }
 
 t_list		*get_sorted_args(int arc, char **arv)
@@ -75,7 +94,7 @@ t_list		*get_sorted_args(int arc, char **arv)
 			else
 			{
 				tmp = ft_lstnew(&curr, sizeof(int));
-				sorted_insert(curr, ret);
+				sorted_insert(&ret, tmp);
 			}
 		}
 		ft_strldel(&split);
