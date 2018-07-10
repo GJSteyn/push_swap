@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 09:21:40 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 09:37:28 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,11 @@ void					lst_insert(t_list *dst, t_list *ins);
 
 t_list					*get_args(int arc, char **arv);
 
-void					run_instructions(t_s_hold *stacks);
+void					run_instructions(t_s_hold *stacks, int debug);
 void					do_op(t_s_hold *stacks, char *op);
 
 t_s_hold				*sh_init(t_list *sa, t_list *sb);
+
+void					debugger(t_s_hold *stacks);
 
 #endif

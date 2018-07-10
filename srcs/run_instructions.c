@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 09:25:51 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 09:36:55 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,14 @@ void		do_op(t_s_hold *stacks, char *op)
 	}
 }
 
-void		run_instructions(t_s_hold *stacks)
+void		run_instructions(t_s_hold *stacks, int debug)
 {
 	char		*in;
 
 	while (get_next_line(0, &in) > 0)
 	{
 		do_op(stacks, in);
+		if (debug)
+			debugger(stacks);
 	}
 }

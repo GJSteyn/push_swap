@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 09:17:41 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 09:37:02 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		main(int arc, char **arv)
 		return (0);
 	}
 	stacks = sh_init(args, stack_b);
-	run_instructions(stacks);
+	run_instructions(stacks, 1);
 	if (is_sorted(args) && ft_lstlen(stack_b) == 0)
 		ft_putstr_fd("OK\n", 1);
 	else

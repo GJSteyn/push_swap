@@ -6,14 +6,14 @@
 #    By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/10 08:52:38 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/10 09:36:28 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME1 = push_swap
 NAME2 = checker
 FILES = check_args.c get_args.c list_ops.c list_ops2.c is_sorted.c \
-		has_duplicates.c run_instructions.c stack_hold_init.c
+		has_duplicates.c run_instructions.c stack_hold_init.c debug.c
 SRCS =  $(patsubst %.c, srcs/%.c, $(FILES))
 OBJS = $(patsubst %.c, bin/%.o, $(FILES)) ./bin/get_next_line.o
 FLAGS = -Wall -Wextra -Werror
