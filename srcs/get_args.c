@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 07:17:45 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 07:18:19 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_list		*get_args(int arc, char **arv)
 	int			curr;
 
 	i = 0;
-	j = -1;
 	while (++i < arc)
 	{
+		j = -1;
 		split = ft_strsplit(arv[i], ' ');
 		while (split[++j])
 		{
