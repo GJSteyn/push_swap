@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 09:36:55 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 11:17:53 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,27 @@
 void		do_op(t_s_hold *stacks, char *op)
 {
 	if (SA(op))
-		lst_swap(&(stacks->stack_a));
+		swap_a(stacks);
 	else if (SB(op))
-		lst_swap(&(stacks->stack_b));
+		swap_b(stacks);
 	else if (SS(op))
-	{
-		lst_swap(&(stacks->stack_a));
-		lst_swap(&(stacks->stack_b));
-	}
+		swap_both(stacks);
 	else if (PA(op))
-		lst_push(&(stacks->stack_a), &(stacks->stack_b));
+		push_a(stacks);
 	else if (PB(op))
-		lst_push(&(stacks->stack_b), &(stacks->stack_a));
+		push_b(stacks);
 	else if (RA(op))
-		lst_rotate(&(stacks->stack_a));
+		rotate_a(stacks);
 	else if (RB(op))
-		lst_rotate(&(stacks->stack_b));
+		rotate_b(stacks);
 	else if (RR(op))
-	{
-		lst_rotate(&(stacks->stack_a));
-		lst_rotate(&(stacks->stack_b));
-	}
+		rotate_both(stacks);
 	else if (RRA(op))
-		lst_rev_rotate(&(stacks->stack_a));
+		rev_rotate_a(stacks);
 	else if (RRB(op))
-		lst_rev_rotate(&(stacks->stack_b));
+		rev_rotate_b(stacks);
 	else if (RRR(op))
-	{
-		lst_rev_rotate(&(stacks->stack_a));
-		lst_rev_rotate(&(stacks->stack_b));
-	}
+		rev_rotate_both(stacks);
 	else
 	{
 		ft_putstr_fd("Invalid operation\n", 2);

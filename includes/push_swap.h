@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 09:37:28 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 11:15:46 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,18 @@ t_list					*get_args(int arc, char **arv);
 
 void					run_instructions(t_s_hold *stacks, int debug);
 void					do_op(t_s_hold *stacks, char *op);
+
+void					swap_a(t_s_hold *stacks);
+void					swap_b(t_s_hold *stacks);
+void					swap_both(t_s_hold *stacks);
+void					push_a(t_s_hold *stacks);
+void					push_b(t_s_hold *stacks);
+void					rotate_a(t_s_hold *stacks);
+void					rotate_b(t_s_hold *stacks);
+void					rotate_both(t_s_hold *stacks);
+void					rev_rotate_a(t_s_hold *stacks);
+void					rev_rotate_b(t_s_hold *stacks);
+void					rev_rotate_both(t_s_hold *stacks);
 
 t_s_hold				*sh_init(t_list *sa, t_list *sb);
 
