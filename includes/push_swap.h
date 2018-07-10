@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 08:22:52 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 08:42:51 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+
+typedef struct			s_stack_hold
+{
+	t_list				*stack_a;
+	t_list				*stack_b;
+}						t_stack_hold;
 
 void					lst_swap(t_list **lst);
 t_list					*lst_pop(t_list **lst);
