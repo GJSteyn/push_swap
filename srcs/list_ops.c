@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:57:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 10:05:29 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/10 10:07:43 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,15 @@ void		lst_rotate(t_list **lst)
 
 	if (*lst)
 	{
-		if (ft_lstlen(*lst) > 1)
-		{
-			tmp = *lst;
-			move = *lst;
-			*lst = (*lst)->next;
-			while (tmp->next)
-				tmp = tmp->next;
-			move->next = NULL;
-			tmp->next = move;
-		}
+		if (ft_lstlen(*lst) == 1)
+			return ;
+		tmp = *lst;
+		move = *lst;
+		*lst = (*lst)->next;
+		while (tmp->next)
+			tmp = tmp->next;
+		move->next = NULL;
+		tmp->next = move;
 	}
 }
 
