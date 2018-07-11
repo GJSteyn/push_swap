@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 13:20:57 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/11 06:37:35 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void					rotate_both(t_s_hold *stacks);
 void					rev_rotate_a(t_s_hold *stacks);
 void					rev_rotate_b(t_s_hold *stacks);
 void					rev_rotate_both(t_s_hold *stacks);
+
+void					push_b_bot(t_s_hold *stacks);
 
 t_s_hold				*sh_init(t_list *sa, t_list *sb);
 
