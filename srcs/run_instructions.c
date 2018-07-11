@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 11:17:53 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/11 18:10:23 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,7 @@ void		run_instructions(t_s_hold *stacks, int debug)
 		do_op(stacks, in);
 		if (debug)
 			debugger(stacks);
+		if (is_sorted(stacks->stack_a) && ft_lstlen(stacks->stack_b) == 0)
+			return ;
 	}
 }

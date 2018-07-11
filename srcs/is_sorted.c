@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/06 11:57:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/07 12:11:07 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/11 18:06:31 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@
 
 int			is_sorted(t_list *lst)
 {
-	while (lst->next)
+	t_list	*tmp;
+
+	tmp = lst;
+	if (tmp)
 	{
-		if (*((int*)(lst->content)) >= *((int*)(lst->next->content)))
-			return (0);
-		lst = lst->next;
+		while (tmp->next)
+		{
+			if (*((int*)(tmp->content)) >= *((int*)(tmp->next->content)))
+				return (0);
+			tmp = tmp->next;
+		}
 	}
 	return (1);
 }
@@ -34,11 +40,14 @@ int			is_sorted(t_list *lst)
 
 int			is_sorted_rev(t_list *lst)
 {
-	while (lst->next)
+	t_list	*tmp;
+
+	tmp = lst;
+	while (tmp->next)
 	{
-		if (*((int*)(lst->content)) <= *((int*)(lst->next->content)))
+		if (*((int*)(tmp->content)) <= *((int*)(tmp->next->content)))
 			return (0);
-		lst = lst->next;
+		tmp = tmp->next;
 	}
 	return (1);
 }

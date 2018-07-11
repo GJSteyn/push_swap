@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 13:58:15 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/11 17:46:04 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_list		*get_args(int arc, char **arv)
 	int			curr;
 
 	i = 0;
+	ret = NULL;
 	while (++i < arc)
 	{
 		j = -1;
@@ -82,6 +83,7 @@ t_list		*get_sorted_args(int arc, char **arv)
 	int			curr;
 
 	i = 0;
+	ret = NULL;
 	while (++i < arc)
 	{
 		j = -1;
