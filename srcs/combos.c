@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 06:34:44 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 09:04:01 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 17:29:04 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 void		push_b_bot(t_s_hold *stacks)
 {
 	push_b(stacks);
-	rotate_b(stacks);
+	if (ft_lstlen(stacks->stack_b) > 1)
+		rotate_b(stacks);
 }
 
 /*
