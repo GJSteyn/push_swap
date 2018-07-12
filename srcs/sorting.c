@@ -6,58 +6,11 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 11:22:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/11 19:00:49 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 09:04:03 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	get_last(t_list *lst)
-{
-	int		ret;
-	t_list	*tmp;
-
-	ret = 0;
-	tmp = lst;
-	if (lst)
-	{
-		while (tmp->next)
-			tmp = tmp->next;
-		ret = *(int*)tmp->content;
-	}
-	return (ret);
-}
-
-static int	get_first(t_list *lst)
-{
-	int		ret;
-
-	ret = 0;
-	if (lst)
-		ret = *(int*)lst->content;
-	return (ret);
-}
-
-static int	get_second(t_list *lst)
-{
-	int		ret;
-
-	ret = 0;
-	if (lst)
-	{
-		if (lst->next)
-		{
-			ret = *(int*)lst->next->content;
-		}
-	}
-	return (ret);
-}
-
-static void	b_to_a(t_s_hold *st)
-{
-	while (st->stack_b)
-		push_a(st);
-}
 
 void		push_and_swap(t_s_hold *st)
 {

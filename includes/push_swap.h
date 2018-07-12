@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 08:03:27 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 09:00:00 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ void					lst_rotate(t_list **lst);
 void					lst_rev_rotate(t_list **lst);
 void					lst_append(t_list *dst, t_list *ins);
 void					lst_insert(t_list *dst, t_list *ins);
+int						get_last(t_list *lst);
+int						get_first(t_list *lst);
+int						get_second(t_list *lst);
 
 t_list					*get_args(int arc, char **arv);
 t_list					*get_sorted_args(int arc, char **arv);
@@ -65,6 +68,7 @@ void					rev_rotate_b(t_s_hold *stacks);
 void					rev_rotate_both(t_s_hold *stacks);
 
 void					push_b_bot(t_s_hold *stacks);
+void					b_to_a(t_s_hold *stacks);
 
 t_s_hold				*sh_init(t_list *sa, t_list *sb);
 
