@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:57 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 09:04:02 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 18:17:15 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,18 @@
 ** Appends a list item to the end of a list.
 */
 
-void		lst_append(t_list *dst, t_list *ins)
+void		lst_append(t_list **dst, t_list *ins)
 {
-	if (dst && ins)
+	t_list		*tmp;
+
+	if (!(*dst) && ins)
+		*dst = ins;
+	else if (*dst && ins)
 	{
-		while (dst->next)
-			dst = dst->next;
-		dst->next = ins;
+		tmp = *dst;
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = ins;
 	}
 }
 
