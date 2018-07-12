@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 09:00:00 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 18:47:36 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct			s_s_hold
 {
 	t_list				*stack_a;
 	t_list				*stack_b;
+	t_list				*ops;
 }						t_s_hold;
 
 void					lst_swap(t_list **lst);
@@ -43,11 +44,12 @@ t_list					*lst_pop(t_list **lst);
 void					lst_push(t_list **dst, t_list **src);
 void					lst_rotate(t_list **lst);
 void					lst_rev_rotate(t_list **lst);
-void					lst_append(t_list *dst, t_list *ins);
+void					lst_append(t_list **dst, t_list *ins);
 void					lst_insert(t_list *dst, t_list *ins);
 int						get_last(t_list *lst);
 int						get_first(t_list *lst);
 int						get_second(t_list *lst);
+void					lst_rem_next(t_list *lst);
 
 t_list					*get_args(int arc, char **arv);
 t_list					*get_sorted_args(int arc, char **arv);
