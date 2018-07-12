@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 08:45:08 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 18:20:50 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_list		*get_args(int arc, char **arv)
 			else
 			{
 				tmp = ft_lstnew(&curr, sizeof(int));
-				lst_append(ret, tmp);
+				lst_append(&ret, tmp);
 			}
 		}
 		ft_strldel(&split);
@@ -64,7 +64,7 @@ static void	sorted_insert(t_list **dst, t_list *insert)
 	if (*(int*)insert->content < smallest)
 		lst_push(dst, &insert);
 	else if (*(int*)insert->content > largest)
-		lst_append(*dst, insert);
+		lst_append(dst, insert);
 	else
 	{
 		tmp = *dst;

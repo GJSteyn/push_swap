@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 17:11:20 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 19:50:28 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,14 @@ int		main(int arc, char **arv)
 	if (ft_lstlen(args) > 8)
 		reorder(stacks);
 	push_and_swap(stacks);
+	simplify(stacks->ops);
+	t_list		*tmp;
+	tmp = stacks->ops;
+	while (tmp)
+	{
+		ft_putstr_fd((char*)tmp->content, 1);
+		ft_putchar_fd('\n', 1);
+		tmp = tmp->next;
+	}
 	return (0);
 }

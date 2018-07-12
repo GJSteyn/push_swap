@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 07:57:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 17:43:32 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 19:25:01 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,5 @@ void		reorder(t_s_hold *st)
 			rotate_a(st);
 	}
 	b_to_a(st);
+	// to do: also sort while reordering
 }
