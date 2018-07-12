@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 07:57:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 08:48:49 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 16:00:57 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ void		reorder(t_s_hold *st)
 	half = len / 2;
 	while (i < half)
 	{
-		if (
+		if (get_first(st->stack_a) <= half)
+		{
+			push_b(st);
+			i++;
+		}
+		else
+			rotate_a(st);
 	}
+	b_to_a(st);
 }
