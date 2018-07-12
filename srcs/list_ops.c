@@ -6,17 +6,18 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:57:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 10:07:43 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 08:43:45 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-/* Swap:
- * Swap the first two element at the top of a stack.
- * Do nothing if there is only one or no elements.
- */
+/*
+** Swap:
+** Swap the first two element at the top of a stack.
+** Do nothing if there is only one or no elements.
+*/
 
 void		lst_swap(t_list **lst)
 {
@@ -31,10 +32,11 @@ void		lst_swap(t_list **lst)
 	}
 }
 
-/* Pop:
- * Removes the first item in a list and returns it.
- * The second item, if it exists, becomes the new top.
- */
+/*
+** Pop:
+** Removes the first item in a list and returns it.
+** The second item, if it exists, becomes the new top.
+*/
 
 t_list		*lst_pop(t_list **lst)
 {
@@ -50,11 +52,12 @@ t_list		*lst_pop(t_list **lst)
 	return (NULL);
 }
 
-/* Push:
- * Take the first element at the top of a list and
- * put it at the top of another. Do nothing if the
- * source list is empty.
- */
+/*
+** Push:
+** Take the first element at the top of a list and
+** put it at the top of another. Do nothing if the
+** source list is empty.
+*/
 
 void		lst_push(t_list **dst, t_list **src)
 {
@@ -68,10 +71,11 @@ void		lst_push(t_list **dst, t_list **src)
 	}
 }
 
-/* Rotate:
- * Shift up all elements of a stack by 1.
- * The first element becomes the last one.
- */
+/*
+** Rotate:
+** Shift up all elements of a stack by 1.
+** The first element becomes the last one.
+*/
 
 void		lst_rotate(t_list **lst)
 {
@@ -92,10 +96,11 @@ void		lst_rotate(t_list **lst)
 	}
 }
 
-/* Reverse Rotate:
- * Shift down all elements of a stack by 1.
- * The last element becomes the first one.
- */
+/*
+** Reverse Rotate:
+** Shift down all elements of a stack by 1.
+** The last element becomes the first one.
+*/
 
 void		lst_rev_rotate(t_list **lst)
 {
