@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 07:57:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 16:00:57 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 17:43:32 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,40 @@ void		reorder(t_s_hold *st)
 	int		i;
 	int		len;
 	int		half;
+	int		pos1;
+	int		pos2;
+	int		diff;
+	int		first;
 
 	i = 0;
 	len = ft_lstlen(st->stack_a);
 	half = len / 2;
-	while (i < half)
+	pos1 = len / 4;
+	pos2 = len / 4 * 3;
+	diff = pos1 - pos2;
+	while (i < diff)
 	{
-		if (get_first(st->stack_a) <= half)
+		first = get_first(st->stack_a);
+		if (first < half && first > pos1)
+		{
+			push_b_bot(st);
+			i++;
+		}
+		else if (first >= half && first < pos2)
 		{
 			push_b(st);
+			i++;
+		}
+		else
+			rotate_a(st);
+	}
+	i = 0;
+	while (i < pos1)
+	{
+		first = get_first(st->stack_a);
+		if (first <= pos1)
+		{
+			push_b_bot(st);
 			i++;
 		}
 		else
