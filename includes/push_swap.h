@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 18:47:36 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 18:55:41 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ void					push_and_swap(t_s_hold *stacks);
 void					normlist(t_list *chaos, t_list *order);
 
 void					reorder(t_s_hold *stacks);
+
+void					simplify(t_list *lst);
 
 #endif
