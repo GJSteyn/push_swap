@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 16:13:55 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 16:59:57 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int		main(int arc, char **arv)
 		ft_putstr_fd("Error\n--Duplicates\n", 2);
 		return (0);
 	}
+	if (is_sorted(args))
+		return (0);
 	sargs = get_sorted_args(arc, arv);
 	normlist(args, sargs);
 	stacks = sh_init(args, stack_b);
