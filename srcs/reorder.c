@@ -1,43 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_ops2.c                                        :+:      :+:    :+:   */
+/*   reorder.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/09 05:23:57 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 08:39:10 by gsteyn           ###   ########.fr       */
+/*   Created: 2018/07/12 07:57:53 by gsteyn            #+#    #+#             */
+/*   Updated: 2018/07/12 08:48:49 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
-/*
-** Append:
-** Appends a list item to the end of a list.
-*/
-
-void		lst_append(t_list *dst, t_list *ins)
+void		reorder(t_s_hold *st)
 {
-	if (dst && ins)
-	{
-		while (dst->next)
-			dst = dst->next;
-		dst->next = ins;
-	}
-}
+	int		i;
+	int		len;
+	int		half;
 
-/*
-** Insert:
-** Inserts a list item between two existing list items.
-*/
-
-void		lst_insert(t_list *dst, t_list *ins)
-{
-	if (dst && ins)
+	i = 0;
+	len = ft_lstlen(st->stack_a);
+	half = len / 2;
+	while (i < half)
 	{
-		ins->next = dst->next;
-		dst->next = ins;
+		if (
 	}
 }

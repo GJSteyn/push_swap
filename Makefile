@@ -6,7 +6,11 @@
 #    By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2018/07/12 08:04:49 by gsteyn           ###   ########.fr        #
+=======
+#    Updated: 2018/07/12 08:01:15 by gsteyn           ###   ########.fr        #
+>>>>>>> better_algo
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +18,7 @@ NAME1 = push_swap
 NAME2 = checker
 FILES = check_args.c get_args.c list_ops.c list_ops2.c is_sorted.c \
 		has_duplicates.c run_instructions.c stack_hold_init.c debug.c \
-		ops1.c ops2.c ops3.c sorting.c normalize.c combos.c
+		ops1.c ops2.c ops3.c sorting.c normalize.c reorder.c combos.c
 SRCS =  $(patsubst %.c, srcs/%.c, $(FILES))
 OBJS = $(patsubst %.c, bin/%.o, $(FILES)) ./bin/get_next_line.o
 FLAGS = -Wall -Wextra -Werror

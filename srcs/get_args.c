@@ -6,17 +6,18 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/11 17:46:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/12 08:45:08 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-/* Get Args
- * Retrieves the arguments fed from terminal and
- * returns them in a list with integers as content.
- */
+/*
+** Get Args
+** Retrieves the arguments fed from terminal and
+** returns them in a list with integers as content.
+*/
 
 t_list		*get_args(int arc, char **arv)
 {
