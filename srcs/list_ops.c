@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:57:13 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 08:43:45 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 06:56:24 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void		lst_rev_rotate(t_list **lst)
 		while (tmp->next)
 		{
 			if (!(tmp->next->next))
-				break;
+				break ;
 			tmp = tmp->next;
 		}
 		move = tmp->next;

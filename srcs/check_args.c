@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 07:11:38 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 06:58:45 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int		args_are_nums(char **args)
 	return (1);
 }
 
-int		args_valid(int arc, char **arv)
+int				args_valid(int arc, char **arv)
 {
 	char	**split;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:57 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 18:17:15 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 07:00:42 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void		lst_insert(t_list *dst, t_list *ins)
 ** Retrieves the integer value of the last element's
 ** content from a list.
 */
+
 int			get_last(t_list *lst)
 {
 	int		ret;
@@ -73,6 +74,7 @@ int			get_last(t_list *lst)
 ** Retrieves the integer value of the first element's
 ** content from a list.
 */
+
 int			get_first(t_list *lst)
 {
 	int		ret;
@@ -88,6 +90,7 @@ int			get_first(t_list *lst)
 ** Retrieves the integer value of the second element's
 ** content from a list if there is a second element.
 */
+
 int			get_second(t_list *lst)
 {
 	int		ret;

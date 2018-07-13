@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 06:34:44 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 17:29:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 07:01:31 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 ** Push b bottom:
 ** Push the top value of a to the bottom of b.
 */
+
 void		push_b_bot(t_s_hold *stacks)
 {
 	push_b(stacks);
@@ -27,6 +28,7 @@ void		push_b_bot(t_s_hold *stacks)
 ** B to A:
 ** Push all elements from b to a.
 */
+
 void		b_to_a(t_s_hold *st)
 {
 	while (st->stack_b)
