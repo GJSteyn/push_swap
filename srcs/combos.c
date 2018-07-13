@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 06:34:44 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 07:44:27 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 11:04:53 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ void		sort_top_a(t_s_hold *st)
 {
 	t_list		*lst;
 
-	lst = sta->stack_a;
+	lst = st->stack_a;
 	if (ft_lstlen(lst) < 2)
 		return ;
-	if (get_first(lst) > get_second(lst)
+	if (get_first(lst) > get_second(lst))
 			rotate_a(st);
 }
 
@@ -56,13 +56,24 @@ void		sort_top_a(t_s_hold *st)
 ** Order the top two elements in b ascending.
 */
 
-void		sort_top_a(t_s_hold *st)
+void		sort_top_b(t_s_hold *st)
 {
 	t_list		*lst;
 
-	lst = sta->stack_b;
+	lst = st->stack_b;
 	if (ft_lstlen(lst) < 2)
 		return ;
-	if (get_first(lst) > get_second(lst)
+	if (get_first(lst) > get_second(lst))
 			rotate_b(st);
+}
+
+/*
+** Sort ends a:
+** Order first and last elements.
+*/
+
+void	sort_ends_a(t_s_hold *st)
+{
+	if (get_last(st->stack_a) < get_first(st->stack_a))
+		rotate_a(st);
 }

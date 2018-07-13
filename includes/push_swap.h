@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 07:45:33 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 11:04:48 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void					push_b_bot(t_s_hold *stacks);
 void					b_to_a(t_s_hold *stacks);
 void					sort_top_a(t_s_hold *stacks);
 void					sort_top_b(t_s_hold *stacks);
+void					sort_ends_a(t_s_hold *stacks);
+void					sort_ends_b(t_s_hold *stacks);
 
 t_s_hold				*sh_init(t_list *sa, t_list *sb);
 
