@@ -6,11 +6,23 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 06:34:44 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 11:04:53 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 13:28:47 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*
+** Push a bottom:
+** Push the top value of b to the bottom of a.
+*/
+
+void		push_a_bot(t_s_hold *stacks)
+{
+	push_a(stacks);
+	if (ft_lstlen(stacks->stack_a) > 1)
+		rotate_a(stacks);
+}
 
 /*
 ** Push b bottom:
@@ -65,15 +77,4 @@ void		sort_top_b(t_s_hold *st)
 		return ;
 	if (get_first(lst) > get_second(lst))
 			rotate_b(st);
-}
-
-/*
-** Sort ends a:
-** Order first and last elements.
-*/
-
-void	sort_ends_a(t_s_hold *st)
-{
-	if (get_last(st->stack_a) < get_first(st->stack_a))
-		rotate_a(st);
 }

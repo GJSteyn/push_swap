@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 11:04:48 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 13:39:23 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void					rev_rotate_a(t_s_hold *stacks);
 void					rev_rotate_b(t_s_hold *stacks);
 void					rev_rotate_both(t_s_hold *stacks);
 
+void					push_a_bot(t_s_hold *stacks);
 void					push_b_bot(t_s_hold *stacks);
 void					b_to_a(t_s_hold *stacks);
 void					sort_top_a(t_s_hold *stacks);
@@ -80,6 +81,8 @@ t_s_hold				*sh_init(t_list *sa, t_list *sb);
 
 void					debugger(t_s_hold *stacks);
 
+void					sort2(t_s_hold *stacks);
+void					sortn(t_s_hold *stacks, int lst1len, int lst2len);
 void					push_and_swap(t_s_hold *stacks);
 
 void					normlist(t_list *chaos, t_list *order);

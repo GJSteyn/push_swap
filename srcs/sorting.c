@@ -6,11 +6,69 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 11:22:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/12 09:04:03 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/13 13:44:07 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void		sort2(t_s_hold *st)
+{
+	int		i;
+	int		len;
+
+	i = 0;
+	len = ft_lstlen(st->stack_a);
+	while (i < len / 2)
+	{
+		if (get_first(st->stack_a) > get_second(st->stack_a))
+			swap_a(st);
+		rotate_a(st);
+		rotate_a(st);
+		i++;
+	}
+}
+
+void		sortn(t_s_hold *st, int lst1len, int lst2len)
+{
+	int			i;
+	int			sum;
+
+	i = 0;
+	sum = lst1len + lst2len;
+	while (i < sum)
+	{
+		if (lst1len == 0)
+		{
+			while (lst2len > 0)
+			{
+				lst2len--;
+				push_a_bot(st);
+			}
+			break ;
+		}
+		else if (lst2len == 0)
+		{
+			while (lst1len > 0)
+			{
+				lst1len--;
+				rotate_a(st);
+			}
+			break ;
+		}
+		if (get_first(st->stack_a) > get_first(st->stack_b))
+		{
+			lst1len--;
+			rotate_a(st);
+		}
+		else
+		{
+			lst2len--;
+			push_a_bot(st);
+		}
+		i++;
+	}
+}
 
 void		push_and_swap(t_s_hold *st)
 {
