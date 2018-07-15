@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 13:39:23 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/15 15:55:39 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void					debugger(t_s_hold *stacks);
 void					sort2(t_s_hold *stacks);
 void					sortn(t_s_hold *stacks, int lst1len, int lst2len);
 void					push_and_swap(t_s_hold *stacks);
+
+void					sort4(t_s_hold *stacks);
 
 void					normlist(t_list *chaos, t_list *order);
 

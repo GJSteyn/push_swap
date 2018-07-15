@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 12:04:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/15 16:07:47 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,12 @@ int		main(int arc, char **arv)
 	sargs = get_sorted_args(arc, arv);
 	normlist(args, sargs);
 	stacks = sh_init(args, stack_b);
-	if (ft_lstlen(args) > 8)
-		reorder(stacks);
+	//if (ft_lstlen(args) > 8)
+	//	reorder(stacks);
 	//push_and_swap(stacks);
 	//simplify(stacks->ops);
-	sort2(stacks);
+	//sort2(stacks);
+	sort4(stacks);
 	t_list		*tmp;
 	tmp = stacks->ops;
 	while (tmp)
