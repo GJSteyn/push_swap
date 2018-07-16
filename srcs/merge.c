@@ -6,9 +6,9 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 05:59:56 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/16 10:13:50 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/16 16:31:07 by gsteyn           ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */ 
+/* ************************************************************************** */
 #include "push_swap.h"
 
 static int	get_closest_dir(t_list *lst, int target, int lstlen)
@@ -76,12 +76,12 @@ void		sort4(t_s_hold *st)
 	int		side;
 
 	len = ft_lstlen(st->stack_a);
-	curr = 14;
+	curr = 25;
 	while (1)
 	{
 		len2 = ft_lstlen(st->stack_a);
 		i = 0;
-		while (i < 14 && len2 > 0)
+		while (i < 25 && len2 > 0)
 		{
 			side = get_closest_dir(st->stack_a, curr, len);
 			if (side > 0)
@@ -106,8 +106,8 @@ void		sort4(t_s_hold *st)
 		}
 		if (curr == len)
 			break ;
-		else if (curr <= len - 14)
-			curr += 14;
+		else if (curr < len - 25)
+			curr += 25;
 		else
 			curr += len - curr;
 	}
