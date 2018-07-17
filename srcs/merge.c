@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 05:59:56 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/17 09:11:28 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/17 18:12:56 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -133,8 +133,8 @@ void		sort4(t_s_hold *st)
 	int		side;
 	int		blocksize;
 
-	blocksize = 21;
 	len = ft_lstlen(st->stack_a);
+	blocksize = len / 5;
 	curr = blocksize;
 	while (1)
 	{
@@ -155,6 +155,8 @@ void		sort4(t_s_hold *st)
 				swap_b(st);
 			len2--;
 		}
+		if (blocksize > 5)
+			blocksize -= blocksize / 5;
 		if (curr == len)
 			break ;
 		else if (curr < len - blocksize)
