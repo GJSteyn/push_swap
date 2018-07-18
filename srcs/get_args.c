@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/18 16:48:22 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/18 17:30:59 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_list		*get_args(int arc, char **arv)
 				ret = ft_lstnew(split[j], ft_strlen(split[j]));
 			else
 			{
-				tmp = fft_lstnew(split[j], ft_strlen(split[j]));
+				tmp = ft_lstnew(split[j], ft_strlen(split[j]));
 				lst_append(&ret, tmp);
 			}
 		}
