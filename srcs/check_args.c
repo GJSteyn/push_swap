@@ -6,13 +6,21 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/18 15:44:33 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/18 16:03:22 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "checker.h"
 #include "push_swap.h"
+
+int			is_option(char *arg)
+{
+	if (ft_strlen(arg) < 2)
+		return (0);
+	else if (arg[0] == '-' && ft_isalpha(arg[1]))
+		return (1);
+}
 
 static int		arg_is_int(char *arg)
 {
@@ -22,14 +30,6 @@ static int		arg_is_int(char *arg)
 	if (result > 2147483647 || result < -2147483648)
 		return (0);
 	return (1);
-}
-
-static int		is_option(char *arg)
-{
-	if (ft_strlen(arg) < 2)
-		return (0);
-	else if (arg[0] == '-' && ft_isalpha(arg[1]))
-		return (1);
 }
 
 static int		args_are_nums(char **args)

@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:19 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 07:08:39 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/18 16:03:01 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 
 int					args_valid(int arc, char **arv);
+int					is_option(char *arg);
 
 int					is_sorted(t_list *lst);
 int					is_sorted_rev(t_list *lst);
