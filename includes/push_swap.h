@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/15 15:55:39 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/18 17:25:59 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,11 @@
 
 typedef struct			s_s_hold
 {
+	t_list				*args;
 	t_list				*stack_a;
 	t_list				*stack_b;
 	t_list				*ops;
+	unsigned int			options;
 }						t_s_hold;
 
 void					lst_swap(t_list **lst);
