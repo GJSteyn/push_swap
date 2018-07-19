@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 07:18:23 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 07:49:36 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void					sort_top_b(t_s_hold *stacks);
 void					sort_ends_a(t_s_hold *stacks);
 void					sort_ends_b(t_s_hold *stacks);
 
-t_s_hold				*sh_init(t_list *sa, t_list *sb);
+t_s_hold				*sh_init(t_list *args);
 
 void					debugger(t_s_hold *stacks);
 
@@ -94,5 +94,7 @@ void					normlist(t_list *chaos, t_list *order);
 void					reorder(t_s_hold *stacks);
 
 void					simplify(t_list *lst);
+
+void					print_ops(t_list *ops);
 
 #endif
