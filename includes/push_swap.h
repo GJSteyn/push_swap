@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 07:49:36 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 10:41:01 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void					lst_rem_next(t_list *lst);
 t_list					*get_args(int arc, char **arv);
 t_list					*get_sorted_args(t_list *args);
 
-void					run_instructions(t_s_hold *stacks, int debug);
 void					do_op(t_s_hold *stacks, char *op);
 
 void					swap_a(t_s_hold *stacks);

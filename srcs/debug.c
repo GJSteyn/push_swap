@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 09:28:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/10 09:42:44 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 10:40:13 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void		debugger(t_s_hold *stacks)
 	t_list		*b;
 
 	if (!stacks)
-		return ;
-	if (!stacks->stack_a && !stacks->stack_b)
 		return ;
 	a = stacks->stack_a;
 	b = stacks->stack_b;
