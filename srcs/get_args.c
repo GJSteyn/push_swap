@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/18 17:30:59 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 07:25:19 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ t_list		*get_args(int arc, char **arv)
 	return (ret);
 }
 
+/* Sorted Insert:
+** Inserts list items into an existing list
+** in ascending order.
+*/
+
 static void	sorted_insert(t_list **dst, t_list *insert)
 {
 	int		largest;
@@ -79,33 +84,30 @@ static void	sorted_insert(t_list **dst, t_list *insert)
 ** while sorting them in ascending order in the process.
 */
 
-t_list		*get_sorted_args(int arc, char **arv)
+t_list		*get_sorted_args(t_list *args)
 {
 	t_list		*ret;
-	t_list		*tmp;
-	char		**split;
 	int			i;
 	int			j;
-	int			curr;
+	int			num;
+	char		*curr;
 
 	i = 0;
 	ret = NULL;
-	while (++i < arc)
+	if (!args)
+		return (NULL);
+	while (args)
 	{
-		j = -1;
-		split = ft_strsplit(arv[i], ' ');
-		while (split[++j])
+		curr = (char*)args->content;
+		if (!is_option(curr))
 		{
-			curr = ft_atoi(split[j]);
+			num = ft_atoi(curr);
 			if (!ret)
-				ret = ft_lstnew(&curr, sizeof(int));
+				ret = ft_lstnew(&num, sizeof(int));
 			else
-			{
-				tmp = ft_lstnew(&curr, sizeof(int));
-				sorted_insert(&ret, tmp);
-			}
+				sorted_insert(&ret, ft_lstnew(&num, sizeof(int)));
 		}
-		ft_strldel(&split);
+		args = args->next;
 	}
 	return (ret);
 }
