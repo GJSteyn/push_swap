@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 07:25:19 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 07:55:23 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,9 @@ static void	sorted_insert(t_list **dst, t_list *insert)
 t_list		*get_sorted_args(t_list *args)
 {
 	t_list		*ret;
-	int			i;
-	int			j;
 	int			num;
 	char		*curr;
 
-	i = 0;
 	ret = NULL;
 	if (!args)
 		return (NULL);

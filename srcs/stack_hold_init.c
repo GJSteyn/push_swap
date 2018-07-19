@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:45:35 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/18 17:27:03 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 07:56:49 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static t_list		*get_stack_a(t_list *args)
 				if (!stack_a)
 					stack_a = ft_lstnew(&curr, sizeof(int));
 				else
-					lst_append(stack_a, ft_lstnew(&curr, sizeof(int)));
+					lst_append(&stack_a, ft_lstnew(&curr, sizeof(int)));
 			}
 			args = args->next;
 		}
@@ -49,7 +49,7 @@ static t_list		*get_stack_a(t_list *args)
 static unsigned int	get_options(t_list *args)
 {
 	unsigned int		options;
-	char			*curr;
+	char				*curr;
 	unsigned int		add;
 
 	options = 0;
@@ -66,6 +66,7 @@ static unsigned int	get_options(t_list *args)
 		}
 		args = args->next;
 	}
+	return (options);
 }
 
 /* Stack Hold Init:
@@ -75,7 +76,7 @@ static unsigned int	get_options(t_list *args)
 ** integer value arguments retrieved from args.
 */
 
-t_s_hold		*sh_init(t_list *args)
+t_s_hold			*sh_init(t_list *args)
 {
 	t_s_hold		*ret;
 

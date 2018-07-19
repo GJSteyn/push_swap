@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 07:40:50 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 07:54:48 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int				is_option(char *arg)
 		return (0);
 	else if (arg[0] == '-' && ft_isalpha(arg[1]))
 		return (1);
+	return (0);
 }
 
 static int		arg_is_int(char *arg)
@@ -34,11 +35,11 @@ static int		arg_is_int(char *arg)
 
 static int		arg_is_valid(char *arg)
 {
-	if (is_option(args[i]))
+	if (is_option(arg))
 		return (1);
 	if (!ft_is_num(arg))
 		return (0);
-	if (!arg_is_int(args[i]))
+	if (!arg_is_int(arg))
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/18 15:54:24 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 08:00:11 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,22 @@
 int		main(int arc, char **arv)
 {
 	t_list		*args;
-	t_list		*stack_b;
 	t_s_hold	*stacks;
 
-	stack_b = NULL;
-	args = NULL;
-	if (!args_valid(arc, arv))
+	args = get_args(arc, arv);
+	if (!args_valid(arc, args))
 	{
 		ft_putstr_fd("Error\n", 1);
 		return (0);
 	}
-	get_args(arc, arv, &args);
 	if (has_duplicates(args))
 	{
 		ft_putstr_fd("Error\n--Duplicates\n", 2);
 		return (0);
 	}
-	stacks = sh_init(args, stack_b);
+	stacks = sh_init(args);
 	run_instructions(stacks, 1);
-	if (is_sorted(args) && ft_lstlen(stack_b) == 0)
+	if (is_sorted(stacks->stack_a) && ft_lstlen(stacks->stack_b) == 0)
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
