@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 10:41:01 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 15:17:41 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void					sort_ends_b(t_s_hold *stacks);
 t_s_hold				*sh_init(t_list *args);
 
 void					debugger(t_s_hold *stacks);
+int					has_debug_op(unsigned int options);
 
 void					sort2(t_s_hold *stacks);
 void					sortn(t_s_hold *stacks, int lst1len, int lst2len);
@@ -95,5 +96,7 @@ void					reorder(t_s_hold *stacks);
 void					simplify(t_list *lst);
 
 void					print_ops(t_list *ops);
+
+void					run_instructions(t_s_hold *stacks);
 
 #endif
