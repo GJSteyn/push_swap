@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 15:20:34 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 16:06:44 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,13 @@ void		run_instructions(t_s_hold *stacks)
 	debug = 0;
 	if (has_debug_op(stacks->options))
 		debug = 1;
+	if (debug)
+		print_init(stacks);
 	while (get_next_line(0, &in) > 0)
 	{
 		do_op(stacks, in);
 		if (debug)
-			debugger(stacks);
+			debugger(stacks, in);
+		ft_strdel(&in);
 	}
 }

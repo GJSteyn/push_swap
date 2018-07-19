@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 15:03:32 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 16:23:05 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int		main(int arc, char **arv)
 	stacks = sh_init(args);
 	run_instructions(stacks);
 	if (is_sorted(stacks->stack_a) && ft_lstlen(stacks->stack_b) == 0)
-		ft_putstr_fd("OK\n", 1);
+		ft_putstr_fd(GGRN"OK\n"GCLR, 1);
 	else
-		ft_putstr_fd("KO\n", 1);
+		ft_putstr_fd(GRED"KO\n"GCLR, 1);
 	return (0);
 }

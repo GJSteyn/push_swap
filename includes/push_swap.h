@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 15:17:41 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 16:19:50 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 # define RRA(c) ft_strcmp(c, "rra") == 0 ? 1 : 0
 # define RRB(c) ft_strcmp(c, "rrb") == 0 ? 1 : 0
 # define RRR(c) ft_strcmp(c, "rrr") == 0 ? 1 : 0
+
+# define GCLR "\x1B[0m"
+# define GRED "\x1B[31m"
+# define GGRN "\x1B[32m"
 
 # include "libft.h"
 # include "get_next_line.h"
@@ -80,8 +84,9 @@ void					sort_ends_b(t_s_hold *stacks);
 
 t_s_hold				*sh_init(t_list *args);
 
-void					debugger(t_s_hold *stacks);
+void					debugger(t_s_hold *stacks, char *op);
 int					has_debug_op(unsigned int options);
+void					print_init(t_s_hold *stacks);
 
 void					sort2(t_s_hold *stacks);
 void					sortn(t_s_hold *stacks, int lst1len, int lst2len);
