@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 09:28:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 16:22:25 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/19 17:05:13 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,7 @@ void		print_init(t_s_hold *st)
 	a = st->stack_a;
 	b = st->stack_b;
 	ft_putstr_fd("\n----------------------------------------------\n", 2);
-	ft_putstr_fd(GGRN"Init "GCLR, 2);
-	ft_putstr_fd("a and b:\n", 2);
+	ft_putstr_fd(GGRN"Init"GCLR" a and b:\n", 2);
 	ft_putstr_fd("----------------------------------------------\n", 2);
 	while (a != NULL || b != NULL)
 	{
