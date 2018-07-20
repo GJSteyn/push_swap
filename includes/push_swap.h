@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/20 08:03:22 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 09:19:14 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include <ncurses.h>
+# include <curses.h>
 
 typedef struct			s_s_hold
 {
@@ -64,25 +64,25 @@ t_list					*get_sorted_args(t_list *args);
 
 void					do_op(t_s_hold *stacks, char *op);
 
-void					swap_a(t_s_hold *stacks);
-void					swap_b(t_s_hold *stacks);
-void					swap_both(t_s_hold *stacks);
-void					push_a(t_s_hold *stacks);
-void					push_b(t_s_hold *stacks);
-void					rotate_a(t_s_hold *stacks);
-void					rotate_b(t_s_hold *stacks);
-void					rotate_both(t_s_hold *stacks);
-void					rev_rotate_a(t_s_hold *stacks);
-void					rev_rotate_b(t_s_hold *stacks);
-void					rev_rotate_both(t_s_hold *stacks);
+void					swap_a(t_s_hold *stacks, int checking);
+void					swap_b(t_s_hold *stacks, int checking);
+void					swap_both(t_s_hold *stacks, int checking);
+void					push_a(t_s_hold *stacks, int checking);
+void					push_b(t_s_hold *stacks, int checking);
+void					rotate_a(t_s_hold *stacks, int checking);
+void					rotate_b(t_s_hold *stacks, int checking);
+void					rotate_both(t_s_hold *stacks, int checking);
+void					rev_rotate_a(t_s_hold *stacks, int checking);
+void					rev_rotate_b(t_s_hold *stacks, int checking);
+void					rev_rotate_both(t_s_hold *stacks, int checking);
 
-void					push_a_bot(t_s_hold *stacks);
-void					push_b_bot(t_s_hold *stacks);
-void					b_to_a(t_s_hold *stacks);
-void					sort_top_a(t_s_hold *stacks);
-void					sort_top_b(t_s_hold *stacks);
-void					sort_ends_a(t_s_hold *stacks);
-void					sort_ends_b(t_s_hold *stacks);
+void					push_a_bot(t_s_hold *stacks, int checking);
+void					push_b_bot(t_s_hold *stacks, int checking);
+void					b_to_a(t_s_hold *stacks, int checking);
+void					sort_top_a(t_s_hold *stacks, int checking);
+void					sort_top_b(t_s_hold *stacks, int checking);
+void					sort_ends_a(t_s_hold *stacks, int checking);
+void					sort_ends_b(t_s_hold *stacks, int checking);
 
 t_s_hold				*sh_init(t_list *args);
 

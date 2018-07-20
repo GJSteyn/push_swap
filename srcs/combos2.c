@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/13 09:40:44 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 13:27:07 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 09:20:02 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@
 ** Order first and last elements.
 */
 
-void	sort_ends_a(t_s_hold *st)
+void	sort_ends_a(t_s_hold *st, int checking)
 {
 	if (get_last(st->stack_a) < get_first(st->stack_a))
-		rotate_a(st);
+		rotate_a(st, checking);
 }
 
 /*
@@ -28,8 +28,8 @@ void	sort_ends_a(t_s_hold *st)
 ** Order first and last elements.
 */
 
-void	sort_ends_b(t_s_hold *st)
+void	sort_ends_b(t_s_hold *st, int checking)
 {
 	if (get_last(st->stack_b) < get_first(st->stack_b))
-		rotate_b(st);
+		rotate_b(st, checking);
 }

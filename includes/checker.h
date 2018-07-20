@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:19 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 14:55:03 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 08:40:48 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "push_swap.h"
 # include <unistd.h>
 # include <stdlib.h>
+# include <curses.h>
 
 int					args_valid(int arc, t_list *args);
 int					is_option(char *arg);

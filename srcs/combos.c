@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 06:34:44 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/13 13:28:47 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 09:29:07 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 ** Push the top value of b to the bottom of a.
 */
 
-void		push_a_bot(t_s_hold *stacks)
+void		push_a_bot(t_s_hold *stacks, int checking)
 {
-	push_a(stacks);
+	push_a(stacks, checking);
 	if (ft_lstlen(stacks->stack_a) > 1)
-		rotate_a(stacks);
+		rotate_a(stacks, checking);
 }
 
 /*
@@ -29,11 +29,11 @@ void		push_a_bot(t_s_hold *stacks)
 ** Push the top value of a to the bottom of b.
 */
 
-void		push_b_bot(t_s_hold *stacks)
+void		push_b_bot(t_s_hold *stacks, int checking)
 {
-	push_b(stacks);
+	push_b(stacks, checking);
 	if (ft_lstlen(stacks->stack_b) > 1)
-		rotate_b(stacks);
+		rotate_b(stacks, checking);
 }
 
 /*
@@ -41,10 +41,10 @@ void		push_b_bot(t_s_hold *stacks)
 ** Push all elements from b to a.
 */
 
-void		b_to_a(t_s_hold *st)
+void		b_to_a(t_s_hold *st, int checking)
 {
 	while (st->stack_b)
-		push_a(st);
+		push_a(st, checking);
 }
 
 /*
@@ -52,7 +52,7 @@ void		b_to_a(t_s_hold *st)
 ** Order the top two elements in a ascending.
 */
 
-void		sort_top_a(t_s_hold *st)
+void		sort_top_a(t_s_hold *st, int checking)
 {
 	t_list		*lst;
 
@@ -60,7 +60,7 @@ void		sort_top_a(t_s_hold *st)
 	if (ft_lstlen(lst) < 2)
 		return ;
 	if (get_first(lst) > get_second(lst))
-			rotate_a(st);
+			rotate_a(st, checking);
 }
 
 /*
@@ -68,7 +68,7 @@ void		sort_top_a(t_s_hold *st)
 ** Order the top two elements in b ascending.
 */
 
-void		sort_top_b(t_s_hold *st)
+void		sort_top_b(t_s_hold *st, int checking)
 {
 	t_list		*lst;
 
@@ -76,5 +76,5 @@ void		sort_top_b(t_s_hold *st)
 	if (ft_lstlen(lst) < 2)
 		return ;
 	if (get_first(lst) > get_second(lst))
-			rotate_b(st);
+			rotate_b(st, checking);
 }

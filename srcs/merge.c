@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 05:59:56 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 08:05:02 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 09:21:51 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -110,16 +110,16 @@ static void	put_back2(t_s_hold *st, int size)
 		{
 			if (side < 0)
 			{
-				rev_rotate_b(st);
+				rev_rotate_b(st, 0);
 				side++;
 			}
 			else if (side > 0)
 			{
-				rotate_b(st);
+				rotate_b(st, 0);
 				side--;
 			}
 		}
-		push_a(st);
+		push_a(st, 0);
 		size--;
 	}
 }
@@ -145,14 +145,14 @@ void		sort4(t_s_hold *st)
 			side = get_closest_dir(st->stack_a, curr, len);
 			if (side > 0)
 				while (*(int*)st->stack_a->content > curr)
-					rotate_a(st);
+					rotate_a(st, 0);
 			else if (side < blocksize)
 				while (*(int*)st->stack_a->content > curr)
-					rev_rotate_a(st);
-			push_b(st);
+					rev_rotate_a(st, 0);
+			push_b(st, 0);
 			i++;
 			if (get_first(st->stack_b) < get_second(st->stack_b))
-				swap_b(st);
+				swap_b(st, 0);
 			len2--;
 		}
 		if (blocksize > 5)

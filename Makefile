@@ -6,7 +6,7 @@
 #    By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/20 07:56:04 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/20 08:21:47 by gsteyn           ###   ########.fr        #
 #    Updated: 2018/07/12 08:01:15 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -23,6 +23,7 @@ ODIR 	= bin
 SRCS 	=  $(patsubst %.c, srcs/%.c, $(FILES))
 OBJS 	= $(patsubst %.c, bin/%.o, $(FILES)) ./bin/get_next_line.o
 FLAGS 	= -Wall -Wextra -Werror
+LDFLAGS = -lncurses
 INCLUDES = -I libft -I gnl -I includes
 LIBS 	= libft/libft.a
 GNL 	= gnl/get_next_line.c
@@ -36,10 +37,10 @@ $(NAME2): $(OBJS) libs gnl
 	gcc -o $(NAME2) $(FLAGS) $(INCLUDES) $(OBJS) srcs/checker.c -L. $(LIBS)
 
 ps: $(OBJS)
-	gcc -o $(NAME1) $(FLAGS) $(INCLUDES) $(OBJS) srcs/push_swap.c -L. $(LIBS)
+	gcc -o $(NAME1) $(FLAGS) $(LDFLAGS) $(INCLUDES) $(OBJS) srcs/push_swap.c -L. $(LIBS)
 
 check: $(OBJS)
-	gcc -o $(NAME2) $(FLAGS) $(INCLUDES) $(OBJS) srcs/checker.c -L. $(LIBS)
+	gcc -o $(NAME2) $(FLAGS) $(LDFLAGS) $(INCLUDES) $(OBJS) srcs/checker.c -L. $(LIBS)
 
 libs:
 	make -C ./libft fclean && make -C ./libft
