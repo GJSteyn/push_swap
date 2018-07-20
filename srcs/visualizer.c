@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 07:41:46 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/20 12:38:33 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 14:51:15 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void		visualize1(t_s_hold *st)
 	}
 }
 
-void		visualize(t_s_hold *st)
+void		visualize2(t_s_hold *st)
 {
 	int		x;
 	int		y;
@@ -93,9 +93,10 @@ void		visualize(t_s_hold *st)
 	{
 		x = 0;
 		tmp = st->stack_b;
-		wattron(stdscr, COLOR_PAIR(2));
 		while (tmp)
 		{
+			init_color(COLOR_GREEN, 0, *(int*)tmp->content * 10, 0);
+			wattron(stdscr, COLOR_PAIR(1));
 			if (*(int*)tmp->content >= curr)
 				mvprintw(y, x, "#");
 			else
@@ -107,11 +108,14 @@ void		visualize(t_s_hold *st)
 		mvprintw(y, x, "|");
 		x++;
 		tmp = st->stack_a;
-		wattron(stdscr, COLOR_PAIR(1));
 		while (tmp)
 		{
+			init_color(COLOR_GREEN, 0, *(int*)tmp->content * 10, 0);
+			wattron(stdscr, COLOR_PAIR(1));
 			if (*(int*)tmp->content >= curr)
+			{
 				mvprintw(y, x, "#");
+			}
 			else
 				mvprintw(y, x, " ");
 			tmp = tmp->next;
@@ -121,5 +125,78 @@ void		visualize(t_s_hold *st)
 		curr--;
 	}
 	refresh();
-	usleep(30000);
+	usleep(3000);
+}
+
+void		get_color(int num, int max)
+{
+	if (num < max / 3)
+		wattron(stdscr, COLOR_PAIR(1));
+	else if (num < max / 3 * 2)
+		wattron(stdscr, COLOR_PAIR(2));
+	else
+		wattron(stdscr, COLOR_PAIR(3));
+}
+
+void		visualize(t_s_hold *st)
+{
+	int		x;
+	int		y;
+	int		i;
+	int		max;
+	t_list	*tmp;
+
+	tmp = st->stack_b;
+	x = 0;
+	y = 0;
+	max = ft_lstlen(st->stack_a) + ft_lstlen(st->stack_b);
+	wattron(stdscr, COLOR_PAIR(1));
+	while (tmp)
+	{
+		i = max;
+		y = *(int*)tmp->content;
+		get_color(y, max);
+		while (i > y)
+		{
+			mvprintw(i, x, "#");
+			i--;
+		}
+		while (i >= 0)
+		{
+			wattron(stdscr, COLOR_PAIR(5));
+			mvprintw(i, x, " ");
+			i--;
+		}
+		refresh();
+		x++;
+		tmp = tmp->next;
+	}
+	i = max;
+	wattron(stdscr, COLOR_PAIR(4));
+	while (i >= 0)
+		mvprintw(i--, x, "|");
+	x++;
+	tmp = st->stack_a;
+	while (tmp)
+	{
+		i = max;
+		y = *(int*)tmp->content;
+		get_color(y, max);
+		while (i > y)
+		{
+			mvprintw(i, x, "#");
+			i--;
+		}
+		while (i >= 0)
+		{
+			wattron(stdscr, COLOR_PAIR(5));
+			mvprintw(i, x, " ");
+			i--;
+		}
+		refresh();
+		x++;
+		tmp = tmp->next;
+	}
+	refresh();
+	usleep(300);
 }

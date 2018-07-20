@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/20 12:40:05 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 14:45:36 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void		run_instructions(t_s_hold *st)
 	init_pair(2, COLOR_BLACK, COLOR_YELLOW);
 	init_pair(3, COLOR_BLACK, COLOR_RED);
 	init_pair(4, COLOR_BLACK, COLOR_WHITE);
+	init_pair(5, COLOR_WHITE, COLOR_BLACK);
 	noecho();
 	curs_set(0);
 	tmp = st->ops;
