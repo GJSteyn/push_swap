@@ -6,7 +6,7 @@
 #    By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/19 14:46:31 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/20 07:56:04 by gsteyn           ###   ########.fr        #
 #    Updated: 2018/07/12 08:01:15 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -17,7 +17,7 @@ FILES 	= check_args.c get_args.c list_ops.c list_ops2.c list_ops3.c \
 		is_sorted.c has_duplicates.c run_instructions.c \
 		stack_hold_init.c debug.c ops1.c ops2.c ops3.c sorting.c \
 		normalize.c reorder.c combos.c combos2.c simplify.c \
-		merge.c print_ops.c
+		merge.c print_ops.c visualizer.c
 SDIR 	= srcs
 ODIR 	= bin
 SRCS 	=  $(patsubst %.c, srcs/%.c, $(FILES))

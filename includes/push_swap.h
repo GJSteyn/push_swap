@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 16:19:50 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/20 08:03:22 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define GCLR "\x1B[0m"
 # define GRED "\x1B[31m"
 # define GGRN "\x1B[32m"
+# define GYEL "\x1B[33m"
 
 # include "libft.h"
 # include "get_next_line.h"
@@ -35,6 +36,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <ncurses.h>
 
 typedef struct			s_s_hold
 {
@@ -103,5 +105,7 @@ void					simplify(t_list *lst);
 void					print_ops(t_list *ops);
 
 void					run_instructions(t_s_hold *stacks);
+
+void					visualize(t_s_hold *stacks);
 
 #endif
