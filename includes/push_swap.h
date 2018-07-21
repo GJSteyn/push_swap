@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 14:15:52 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 15:02:10 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,10 @@ void					simplify(t_list *lst);
 void					print_ops(t_list *ops);
 
 void					run_instructions(t_s_hold *stacks);
+
+unsigned int			get_options(t_list *args);
+int						has_debug_op(unsigned int options);
+int						has_vis_op(unsigned int options);
 
 void					visualize(t_s_hold *stacks);
 

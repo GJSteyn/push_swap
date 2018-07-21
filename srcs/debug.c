@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 09:28:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 13:34:09 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 14:57:13 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,6 @@ void		debugger(t_s_hold *st, char *op)
 	}
 	ft_putstr_fd("_\t_\n", 2);
 	ft_putstr_fd("a\tb\n", 2);
-}
-
-int		has_debug_op(unsigned int options)
-{
-	if (ft_2pow('v' - 'a') & options)
-		return (1);
-	return (0);
-}
-
-int		has_vis_op(unsigned int options)
-{
-	if (ft_2pow('p' - 'a') & options)
-		return (1);
-	return (0);
 }
 
 void		print_init(t_s_hold *st)

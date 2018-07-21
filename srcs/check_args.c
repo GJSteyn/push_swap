@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 07:54:48 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 15:11:06 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int				is_option(char *arg)
 {
 	if (ft_strlen(arg) < 2)
 		return (0);
-	else if (arg[0] == '-' && ft_isalpha(arg[1]))
+	else if (arg[0] == '-' && ft_islower(arg[1]))
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 14:14:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 16:32:53 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,26 +88,38 @@ static void		start_curses(void)
 	curs_set(0);
 }
 
-void			run_instructions(t_s_hold *st)
+static void		run_visualizer(t_s_hold *st)
 {
 	t_list		*tmp;
 
-	if (has_debug_op(st->options))
-		print_init(st);
-	if (has_vis_op(st->options) && !has_debug_op(st->options))
-		start_curses();
 	get_ops(st);
+	start_curses();
 	tmp = st->ops;
 	while (tmp)
 	{
 		do_op(st, (char*)tmp->content);
-		if (has_debug_op(st->options))
-			debugger(st, (char*)tmp->content);
-		else if (has_vis_op(st->options))
-			visualize(st);
+		visualize(st);
 		tmp = tmp->next;
 	}
-	if (has_vis_op(st->options) && !has_debug_op(st->options))
-		usleep(2000000);
+	usleep(2000000);
 	endwin();
+}
+
+void			run_instructions(t_s_hold *st)
+{
+	char		*in;
+
+	if (has_debug_op(st->options))
+		print_init(st);
+	if (has_vis_op(st->options) && !has_debug_op(st->options))
+		run_visualizer(st);
+	else
+	{
+		while (get_next_line(0, &in) > 0)
+		{
+			do_op(st, in);
+			if (has_debug_op(st->options))
+				debugger(st, in);
+		}
+	}
 }

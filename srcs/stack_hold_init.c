@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:45:35 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 11:19:27 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 16:29:04 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 static t_list		*get_stack_a(t_list *args)
 {
 	t_list		*stack_a;
-	int		curr;
+	int			curr;
 
 	stack_a = NULL;
 	if (args)
@@ -40,33 +40,6 @@ static t_list		*get_stack_a(t_list *args)
 		}
 	}
 	return (stack_a);
-}
-
-/* Get Options:
-** Current available options: -v -> debugger; -p -> visualizer
-*/
-
-static unsigned int	get_options(t_list *args)
-{
-	unsigned int		options;
-	char				*curr;
-	unsigned int		add;
-
-	options = 0;
-	if (!args)
-		return (0);
-	while (args)
-	{
-		curr = (char*)args->content;
-		if (is_option(curr) && ft_islower(curr[1]))
-		{
-			add = ft_2pow(curr[1] - 'a');
-			if (!(add & options))
-				options += add;
-		}
-		args = args->next;
-	}
-	return (options);
 }
 
 /* Stack Hold Init:
