@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/11 06:34:44 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/20 09:29:07 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 17:14:21 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void		sort_top_a(t_s_hold *st, int checking)
 	if (ft_lstlen(lst) < 2)
 		return ;
 	if (get_first(lst) > get_second(lst))
-			rotate_a(st, checking);
+		rotate_a(st, checking);
 }
 
 /*
@@ -76,5 +76,5 @@ void		sort_top_b(t_s_hold *st, int checking)
 	if (ft_lstlen(lst) < 2)
 		return ;
 	if (get_first(lst) > get_second(lst))
-			rotate_b(st, checking);
+		rotate_b(st, checking);
 }

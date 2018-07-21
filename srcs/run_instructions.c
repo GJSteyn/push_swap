@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 16:32:53 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 17:28:26 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,28 +47,8 @@ static void		get_ops(t_s_hold *st)
 
 	while (get_next_line(0, &in) > 0)
 	{
-		if (SA(in))
-			lst_append(&st->ops, ft_lstnew("sa\0", 3));
-		else if (SB(in))
-			lst_append(&st->ops, ft_lstnew("sb\0", 3));
-		else if (SS(in))
-			lst_append(&st->ops, ft_lstnew("ss\0", 3));
-		else if (PA(in))
-			lst_append(&st->ops, ft_lstnew("pa\0", 3));
-		else if (PB(in))
-			lst_append(&st->ops, ft_lstnew("pb\0", 3));
-		else if (RA(in))
-			lst_append(&st->ops, ft_lstnew("ra\0", 3));
-		else if (RB(in))
-			lst_append(&st->ops, ft_lstnew("rb\0", 3));
-		else if (RR(in))
-			lst_append(&st->ops, ft_lstnew("rr\0", 3));
-		else if (RRA(in))
-			lst_append(&st->ops, ft_lstnew("rra\0", 4));
-		else if (RRB(in))
-			lst_append(&st->ops, ft_lstnew("rrb\0", 4));
-		else if (RRR(in))
-			lst_append(&st->ops, ft_lstnew("rrr\0", 4));
+		if (is_op(in))
+			lst_append(&st->ops, ft_lstnew(in, ft_strlen(in)));
 		else
 			ft_error("Error\n");
 		ft_strdel(&in);

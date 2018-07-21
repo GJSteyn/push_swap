@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:03 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 15:11:06 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 17:26:48 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,37 @@ int				is_option(char *arg)
 {
 	if (ft_strlen(arg) < 2)
 		return (0);
-	else if (arg[0] == '-' && ft_islower(arg[1]))
+	else if (arg[0] == '-' && ft_isalpha(arg[1]))
 		return (1);
 	return (0);
+}
+
+int				is_op(char *arg)
+{
+	if (SA(arg))
+		return (1);
+	else if (SB(arg))
+		return (1);
+	else if (SS(arg))
+		return (1);
+	else if (PA(arg))
+		return (1);
+	else if (PB(arg))
+		return (1);
+	else if (RA(arg))
+		return (1);
+	else if (RB(arg))
+		return (1);
+	else if (RR(arg))
+		return (1);
+	else if (RRA(arg))
+		return (1);
+	else if (RRB(arg))
+		return (1);
+	else if (RRR(arg))
+		return (1);
+	else
+		return (0);
 }
 
 static int		arg_is_int(char *arg)

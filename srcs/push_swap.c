@@ -6,14 +6,14 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 14:29:26 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 16:46:31 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "checker.h"
 
-int		main(int arc, char **arv)
+int			main(int arc, char **arv)
 {
 	t_list		*args;
 	t_list		*sargs;
@@ -33,7 +33,6 @@ int		main(int arc, char **arv)
 		sort_blocks(stacks);
 	else
 		push_and_swap(stacks);
-	//simplify(stacks->ops);
 	print_ops(stacks->ops);
 	return (0);
 }

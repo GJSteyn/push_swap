@@ -6,13 +6,14 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 14:56:00 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 16:29:47 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 17:12:58 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* Get Options:
+/*
+** Get Options:
 ** Current available options: -d -> debugger; -v -> visualizer
 */
 
@@ -44,7 +45,8 @@ unsigned int	get_options(t_list *args)
 	return (options);
 }
 
-/* Has Debug Option:
+/*
+** Has Debug Option:
 ** Checks whether the debug option has been set.
 */
 
@@ -55,7 +57,8 @@ int				has_debug_op(unsigned int options)
 	return (0);
 }
 
-/* Has Visualizer Option:
+/*
+** Has Visualizer Option:
 ** Checks whether the visualizer option has been set.
 */
 

@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 11:01:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/20 09:15:09 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 16:39:49 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void		swap_a(t_s_hold *stacks, int checking)
 		if (!checking)
 			lst_append(&stacks->ops, ft_lstnew("sa\0", 3));
 	}
-	//ft_putstr_fd("sa\n", 1);
 }
 
 void		swap_b(t_s_hold *stacks, int checking)
@@ -31,7 +30,6 @@ void		swap_b(t_s_hold *stacks, int checking)
 		if (!checking)
 			lst_append(&stacks->ops, ft_lstnew("sb\0", 3));
 	}
-	//ft_putstr_fd("sb\n", 1);
 }
 
 void		swap_both(t_s_hold *stacks, int checking)
@@ -40,7 +38,6 @@ void		swap_both(t_s_hold *stacks, int checking)
 	lst_swap(&(stacks->stack_b));
 	if (!checking)
 		lst_append(&stacks->ops, ft_lstnew("ss\0", 3));
-	//ft_putstr_fd("ss\n", 1);
 }
 
 void		push_a(t_s_hold *stacks, int checking)
@@ -51,7 +48,6 @@ void		push_a(t_s_hold *stacks, int checking)
 		if (!checking)
 			lst_append(&stacks->ops, ft_lstnew("pa\0", 3));
 	}
-	//ft_putstr_fd("pa\n", 1);
 }
 
 void		push_b(t_s_hold *stacks, int checking)
@@ -62,5 +58,4 @@ void		push_b(t_s_hold *stacks, int checking)
 		if (!checking)
 			lst_append(&stacks->ops, ft_lstnew("pb\0", 3));
 	}
-	//ft_putstr_fd("pb\n", 1);
 }

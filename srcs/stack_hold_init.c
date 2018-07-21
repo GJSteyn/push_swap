@@ -6,14 +6,15 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:45:35 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 16:29:04 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 17:15:20 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "push_swap.h"
 
-/* Get Stack A:
+/*
+** Get Stack A:
 ** Parses the arguments received in list form and retrieves all the
 ** integer values in the order they were fed into the command line.
 */
@@ -42,7 +43,8 @@ static t_list		*get_stack_a(t_list *args)
 	return (stack_a);
 }
 
-/* Stack Hold Init:
+/*
+** Stack Hold Init:
 ** Initializes the struct that holds both stacks, as well as the arguments
 ** and the options if they occur within the arguments.
 ** Stack b gets initialized to NULL while stack a will contain all the

@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 05:23:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 07:55:23 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 17:12:19 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ t_list		*get_args(int arc, char **arv)
 	return (ret);
 }
 
-/* Sorted Insert:
+/*
+** Sorted Insert:
 ** Inserts list items into an existing list
 ** in ascending order.
 */
