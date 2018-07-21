@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 13:35:59 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 14:11:21 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,6 @@ void			run_instructions(t_s_hold *st)
 		tmp = tmp->next;
 	}
 	if (has_vis_op(st->options) && !has_debug_op(st->options))
-		usleep(5000000);
+		usleep(2000000);
 	endwin();
 }
