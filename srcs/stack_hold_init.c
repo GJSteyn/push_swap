@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:45:35 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 07:56:49 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 11:19:27 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static t_list		*get_stack_a(t_list *args)
 }
 
 /* Get Options:
-** Current available options: -v -> debugger.
+** Current available options: -v -> debugger; -p -> visualizer
 */
 
 static unsigned int	get_options(t_list *args)

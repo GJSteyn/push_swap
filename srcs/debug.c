@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 09:28:53 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/19 17:05:13 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 13:34:09 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ void		debugger(t_s_hold *st, char *op)
 int		has_debug_op(unsigned int options)
 {
 	if (ft_2pow('v' - 'a') & options)
+		return (1);
+	return (0);
+}
+
+int		has_vis_op(unsigned int options)
+{
+	if (ft_2pow('p' - 'a') & options)
 		return (1);
 	return (0);
 }

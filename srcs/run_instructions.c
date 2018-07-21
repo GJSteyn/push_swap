@@ -6,14 +6,14 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/20 14:45:36 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 13:35:59 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "checker.h"
 
-void		do_op(t_s_hold *stacks, char *op)
+void			do_op(t_s_hold *stacks, char *op)
 {
 	if (SA(op))
 		swap_a(stacks, 1);
@@ -41,7 +41,7 @@ void		do_op(t_s_hold *stacks, char *op)
 		ft_error("Invalid operation\n");
 }
 
-static void	get_ops(t_s_hold *st)
+static void		get_ops(t_s_hold *st)
 {
 	char		*in;
 
@@ -71,30 +71,12 @@ static void	get_ops(t_s_hold *st)
 			lst_append(&st->ops, ft_lstnew("rrr\0", 4));
 		else
 			ft_error("Invalid operation\n");
+		ft_strdel(&in);
 	}
 }
 
-void		run_instructions(t_s_hold *st)
+static void		start_curses(void)
 {
-	//char		*in;
-	int			debug;
-	t_list		*tmp;
-
-	debug = 0;
-	if (has_debug_op(st->options))
-		debug = 1;
-	if (debug)
-		print_init(st);
-	/*
-	while (get_next_line(0, &in) > 0)
-	{
-		do_op(st, in);
-		if (debug)
-			debugger(st, in);
-		ft_strdel(&in);
-	}
-	*/
-	get_ops(st);
 	initscr();
 	start_color();
 	init_pair(1, COLOR_BLACK, COLOR_GREEN);
@@ -104,13 +86,28 @@ void		run_instructions(t_s_hold *st)
 	init_pair(5, COLOR_WHITE, COLOR_BLACK);
 	noecho();
 	curs_set(0);
+}
+
+void			run_instructions(t_s_hold *st)
+{
+	t_list		*tmp;
+
+	if (has_debug_op(st->options))
+		print_init(st);
+	if (has_vis_op(st->options) && !has_debug_op(st->options))
+		start_curses();
+	get_ops(st);
 	tmp = st->ops;
 	while (tmp)
 	{
-		visualize(st);
 		do_op(st, (char*)tmp->content);
+		if (has_debug_op(st->options))
+			debugger(st, (char*)tmp->content);
+		else if (has_vis_op(st->options))
+			visualize(st);
 		tmp = tmp->next;
 	}
-	usleep(5000000);
+	if (has_vis_op(st->options) && !has_debug_op(st->options))
+		usleep(5000000);
 	endwin();
 }
