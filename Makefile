@@ -6,17 +6,17 @@
 #    By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/21 16:44:05 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/21 17:09:01 by gsteyn           ###   ########.fr        #
 #    Updated: 2018/07/12 08:01:15 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME1 	= push_swap
 NAME2 	= checker
-FILES 	= check_args.c get_args.c list_ops.c list_ops2.c list_ops3.c \
+FILES 	= check_args.c get_args.c list_ops.c list_ops2.c \
 		is_sorted.c has_duplicates.c run_instructions.c \
 		stack_hold_init.c debug.c ops1.c ops2.c ops3.c sorting.c \
-		normalize.c combos.c combos2.c simplify.c merge.c \
+		normalize.c combos.c combos2.c merge.c \
 		print_ops.c visualizer.c options.c
 SDIR 	= srcs
 ODIR 	= bin

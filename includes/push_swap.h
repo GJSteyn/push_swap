@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 15:02:10 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 17:09:21 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ void					lst_insert(t_list *dst, t_list *ins);
 int						get_last(t_list *lst);
 int						get_first(t_list *lst);
 int						get_second(t_list *lst);
-void					lst_rem_next(t_list *lst);
 
 t_list					*get_args(int arc, char **arv);
 t_list					*get_sorted_args(t_list *args);
@@ -100,8 +99,6 @@ void					sort_blocks(t_s_hold *stacks);
 void					normlist(t_list *chaos, t_list *order);
 
 void					reorder(t_s_hold *stacks);
-
-void					simplify(t_list *lst);
 
 void					print_ops(t_list *ops);
 
