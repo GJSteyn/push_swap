@@ -6,22 +6,22 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 05:59:56 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/20 09:21:51 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 14:54:27 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	get_closest_dir(t_list *lst, int target, int lstlen)
 {
 	int		best;
-	int		best_ret;
-	int		i;
 	int		half;
+	int		i;
 	int		curr;
 
 	best = lstlen;
-	i = 0;
 	half = lstlen / 2;
+	i = 0;
 	if (*(int*)lst->content <= target)
 		return (0);
 	while (lst)
@@ -30,49 +30,17 @@ static int	get_closest_dir(t_list *lst, int target, int lstlen)
 			curr = i - lstlen;
 		else
 			curr = i;
-		if (*(int*)lst->content <= target && ft_abs(curr) < best)
-		{
-			best = ft_abs(curr);
-			best_ret = curr;
-		}
+		if (*(int*)lst->content <= target && ft_abs(curr) < ft_abs(best))
+			best = curr;
 		i++;
 		lst = lst->next;
 	}
-	return (best_ret);
+	return (best);
 }
 
-/*
-static void	put_back(t_s_hold *st)
-{
-	int		len;
-	int		back;
-
-	len = ft_lstlen(st->stack_b);
-	back = 0;
-	push_a(st);
-	len--;
-	while (len > 0)
-	{
-		while (get_first(st->stack_b) > get_first(st->stack_a))
-		{
-			rotate_a(st);
-			back++;
-		}
-		push_a(st);
-		while (back > 0)
-		{
-			rev_rotate_a(st);
-			back--;
-		}
-		len--;
-	}
-}
-*/
-
-static int 	get_closest_dir2(t_list *lst, int target)
+static int	get_closest_dir2(t_list *lst, int target)
 {
 	int		best;
-	int		best_ret;
 	int		i;
 	int		curr;
 	int		half;
@@ -88,18 +56,15 @@ static int 	get_closest_dir2(t_list *lst, int target)
 			curr = i - target;
 		else
 			curr = i;
-		if (*(int*)lst->content == target && ft_abs(curr) < best)
-		{
-			best = ft_abs(curr);
-			best_ret = curr;
-		}
+		if (*(int*)lst->content == target && ft_abs(curr) < ft_abs(best))
+			best = curr;
 		i++;
 		lst = lst->next;
 	}
-	return (best_ret);
+	return (best);
 }
 
-static void	put_back2(t_s_hold *st, int size)
+static void	put_back(t_s_hold *st, int size)
 {
 	int		side;
 
@@ -124,13 +89,35 @@ static void	put_back2(t_s_hold *st, int size)
 	}
 }
 
-void		sort4(t_s_hold *st)
+static void	block_to_b(t_s_hold *st, int len, int blocksize, int curr)
+{
+	int			i;
+	int			len2;
+	int			side;
+
+	i = 0;
+	len2 = ft_lstlen(st->stack_a);
+	while (i < blocksize && len2 > 0)
+	{
+		side = get_closest_dir(st->stack_a, curr, len);
+		if (side > 0)
+			while (*(int*)st->stack_a->content > curr)
+				rotate_a(st, 0);
+		else if (side < blocksize)
+			while (*(int*)st->stack_a->content > curr)
+				rev_rotate_a(st, 0);
+		push_b(st, 0);
+		i++;
+		if (get_first(st->stack_b) < get_second(st->stack_b))
+			swap_b(st, 0);
+		len2--;
+	}
+}
+
+void		sort_blocks(t_s_hold *st)
 {
 	int		len;
-	int		len2;
 	int		curr;
-	int		i;
-	int		side;
 	int		blocksize;
 
 	len = ft_lstlen(st->stack_a);
@@ -138,23 +125,7 @@ void		sort4(t_s_hold *st)
 	curr = blocksize;
 	while (1)
 	{
-		len2 = ft_lstlen(st->stack_a);
-		i = 0;
-		while (i < blocksize && len2 > 0)
-		{
-			side = get_closest_dir(st->stack_a, curr, len);
-			if (side > 0)
-				while (*(int*)st->stack_a->content > curr)
-					rotate_a(st, 0);
-			else if (side < blocksize)
-				while (*(int*)st->stack_a->content > curr)
-					rev_rotate_a(st, 0);
-			push_b(st, 0);
-			i++;
-			if (get_first(st->stack_b) < get_second(st->stack_b))
-				swap_b(st, 0);
-			len2--;
-		}
+		block_to_b(st, len, blocksize, curr);
 		if (blocksize > 5)
 			blocksize -= blocksize / 5;
 		if (curr == len)
@@ -164,5 +135,5 @@ void		sort4(t_s_hold *st)
 		else
 			curr += len - curr;
 	}
-	put_back2(st, len);
+	put_back(st, len);
 }
