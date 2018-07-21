@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 14:11:21 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/21 14:14:04 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void			do_op(t_s_hold *stacks, char *op)
 	else if (RRR(op))
 		rev_rotate_both(stacks, 1);
 	else
-		ft_error("Invalid operation\n");
+		ft_error("Error\n");
 }
 
 static void		get_ops(t_s_hold *st)
@@ -70,7 +70,7 @@ static void		get_ops(t_s_hold *st)
 		else if (RRR(in))
 			lst_append(&st->ops, ft_lstnew("rrr\0", 4));
 		else
-			ft_error("Invalid operation\n");
+			ft_error("Error\n");
 		ft_strdel(&in);
 	}
 }
