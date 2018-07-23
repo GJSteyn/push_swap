@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 17:28:26 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/23 15:51:50 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ void			run_instructions(t_s_hold *st)
 {
 	char		*in;
 
+	if (has_usage_op(st->options))
+		print_usage();
 	if (has_debug_op(st->options))
 		print_init(st);
 	if (has_vis_op(st->options) && !has_debug_op(st->options))

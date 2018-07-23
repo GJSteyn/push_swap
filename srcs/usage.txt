@@ -1,0 +1,12 @@
+usage: 
+		ARG="random numbers go here" ; ./push_swap $ARG | ./checker $ARG [-v] [-d] [-h]
+	   	./checker $ARG [-v] [-d] [-h]
+
+v:		Visualizer. Uses curses (curses.h) to print a visual representation of
+		stacks as operations are processed. Can not be used in conjuction with the other
+		options (visualizer doesn't initialize if you try).
+
+d:		Debug. Shows stacks with the values they contain as well as the current
+		operation. Overrides the visualizer.
+
+h:		Help. Prints this usage section.

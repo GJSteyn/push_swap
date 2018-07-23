@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 18:17:09 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/23 07:40:20 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,12 @@ void					run_instructions(t_s_hold *stacks);
 unsigned int			get_options(t_list *args);
 int						has_debug_op(unsigned int options);
 int						has_vis_op(unsigned int options);
+int						has_usage_op(unsigned int options);
 
 void					visualize(t_s_hold *stacks);
 
 void					destroy_stacks(t_s_hold **stacks);
+
+void					print_usage(void);
 
 #endif

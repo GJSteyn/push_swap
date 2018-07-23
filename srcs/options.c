@@ -6,7 +6,7 @@
 /*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 14:56:00 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 17:12:58 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/23 15:44:09 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,18 @@ int				has_debug_op(unsigned int options)
 int				has_vis_op(unsigned int options)
 {
 	if (ft_2pow('v' - 'a') & options)
+		return (1);
+	return (0);
+}
+
+/*
+** Has Usage Option:
+** Checks whether the usage option has been set.
+*/
+
+int				has_usage_op(unsigned int options)
+{
+	if (ft_2pow('h' - 'a') & options)
 		return (1);
 	return (0);
 }
