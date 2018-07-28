@@ -6,11 +6,17 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 11:22:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 16:32:07 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 19:06:58 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void		sort5(t_s_hold *st)
+{
+	block_to_b(st, 5, 2, 2);
+	push_and_swap(st);
+}
 
 void		push_and_swap(t_s_hold *st)
 {

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   merge.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 05:59:56 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 14:54:27 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 17:56:58 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_closest_dir(t_list *lst, int target, int lstlen)
+int			get_closest_dir(t_list *lst, int target, int lstlen)
 {
 	int		best;
 	int		half;
@@ -38,7 +38,7 @@ static int	get_closest_dir(t_list *lst, int target, int lstlen)
 	return (best);
 }
 
-static int	get_closest_dir2(t_list *lst, int target)
+int			get_closest_dir2(t_list *lst, int target)
 {
 	int		best;
 	int		i;
@@ -64,7 +64,7 @@ static int	get_closest_dir2(t_list *lst, int target)
 	return (best);
 }
 
-static void	put_back(t_s_hold *st, int size)
+void		put_back(t_s_hold *st, int size)
 {
 	int		side;
 
@@ -89,7 +89,7 @@ static void	put_back(t_s_hold *st, int size)
 	}
 }
 
-static void	block_to_b(t_s_hold *st, int len, int blocksize, int curr)
+void		block_to_b(t_s_hold *st, int len, int blocksize, int curr)
 {
 	int			i;
 	int			len2;

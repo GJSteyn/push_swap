@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 16:13:18 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 19:07:13 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int			main(int arc, char **arv)
 	normlist(stacks->stack_a, sargs);
 	if (is_sorted(stacks->stack_a))
 		return (0);
-	if (ft_lstlen(args) > 8)
-		sort_blocks(stacks);
-	else
-		push_and_swap(stacks);
+	do_sort(stacks);
 	print_ops(stacks->ops);
 	destroy_stacks(&stacks);
 	destroy_stack(&sargs);
