@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_instructions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 08:14:06 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 15:51:50 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 16:23:25 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ static void		get_ops(t_s_hold *st)
 			ft_error("Error\n");
 		ft_strdel(&in);
 	}
+	ft_strdel(&in);
 }
 
 static void		start_curses(void)
@@ -102,6 +103,8 @@ void			run_instructions(t_s_hold *st)
 			do_op(st, in);
 			if (has_debug_op(st->options))
 				debugger(st, in);
+			ft_strdel(&in);
 		}
+		ft_strdel(&in);
 	}
 }
