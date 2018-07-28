@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 07:40:20 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 16:10:57 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef struct			s_s_hold
 	t_list				*stack_a;
 	t_list				*stack_b;
 	t_list				*ops;
-	unsigned int			options;
+	unsigned int		options;
 }						t_s_hold;
 
 void					lst_swap(t_list **lst);
@@ -110,6 +110,7 @@ int						has_usage_op(unsigned int options);
 
 void					visualize(t_s_hold *stacks);
 
+void					destroy_stack(t_list **stack);
 void					destroy_stacks(t_s_hold **stacks);
 
 void					print_usage(void);

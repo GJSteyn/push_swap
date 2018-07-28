@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:29:23 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/23 07:40:05 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 16:13:18 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int			main(int arc, char **arv)
 	else
 		push_and_swap(stacks);
 	print_ops(stacks->ops);
-	//destroy_stacks(&stacks);
-	//ft_lstdel(&sargs, &ft_lstdelcontent);
+	destroy_stacks(&stacks);
+	destroy_stack(&sargs);
 	return (0);
 }
