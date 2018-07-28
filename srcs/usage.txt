@@ -1,6 +1,7 @@
-usage: 
-		ARG="random numbers go here" ; ./push_swap $ARG | ./checker $ARG [-v] [-d] [-h]
-	   	./checker $ARG [-v] [-d] [-h]
+usage:		ARG="random numbers go here" ; ./push_swap $ARG | ./checker $ARG [-v] [-d] [-h]
+		Checker only: ./checker $ARG [-v] [-d] [-h]
+		If you want random numbers generated automatically, you can use this nifty ruby
+		snippet: ARG=`ruby -e "puts (0..49).to_a.shuffle.join(' ')"`
 
 v:		Visualizer. Uses curses (curses.h) to print a visual representation of
 		stacks as operations are processed. Can not be used in conjuction with the other
@@ -9,4 +10,4 @@ v:		Visualizer. Uses curses (curses.h) to print a visual representation of
 d:		Debug. Shows stacks with the values they contain as well as the current
 		operation. Overrides the visualizer.
 
-h:		Help. Prints this usage section.
+h:		Help. Prints this usage section regardless of other selected options.
