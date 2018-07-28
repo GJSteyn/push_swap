@@ -3,31 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/10 11:22:14 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 17:55:49 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/28 16:32:07 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void		sort2(t_s_hold *st)
-{
-	int		i;
-	int		len;
-
-	i = 0;
-	len = ft_lstlen(st->stack_a);
-	while (i < len / 2)
-	{
-		if (get_first(st->stack_a) > get_second(st->stack_a))
-			swap_a(st, 0);
-		rotate_a(st, 0);
-		rotate_a(st, 0);
-		i++;
-	}
-}
 
 void		push_and_swap(t_s_hold *st)
 {
