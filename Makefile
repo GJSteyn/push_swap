@@ -6,7 +6,7 @@
 #    By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/05 13:32:22 by gsteyn            #+#    #+#              #
-#    Updated: 2018/07/28 19:07:33 by gsteyn           ###   ########.fr        #
+#    Updated: 2018/07/29 13:54:55 by gsteyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FILES 	= check_args.c get_args.c list_ops.c list_ops2.c \
 		stack_hold_init.c debug.c ops1.c ops2.c ops3.c sorting.c \
 		normalize.c combos.c combos2.c merge.c print_ops.c \
 		visualizer.c options.c destroy_stack_holder.c print_usage.c \
-		do_sort.c
+		do_sort.c rate_rotate.c
 SDIR 	= srcs
 ODIR 	= bin
 SRCS 	=  $(patsubst %.c, srcs/%.c, $(FILES))

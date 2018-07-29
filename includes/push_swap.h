@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/03 11:30:02 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 19:07:55 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/29 15:18:05 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,12 @@ void					push_and_swap(t_s_hold *stacks);
 void					do_sort(t_s_hold *stacks);
 
 int						get_closest_dir(t_list *lst, int target, int lstlen);
-int						get_closest_dir2(t_list *lst, int target);
+int						get_closest_dir2(t_list *lst, int target, int lstlen);
 void					put_back(t_s_hold *st, int size);
 void					block_to_b(t_s_hold *st, int len, int blsz, int curr);
 void					sort_blocks(t_s_hold *stacks);
+
+void					rate_rotate(t_s_hold *stacks);
 
 void					normlist(t_list *chaos, t_list *order);
 

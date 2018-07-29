@@ -1,107 +1,93 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   merge2.c                                           :+:      :+:    :+:   */
+/*   rate_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/21 16:41:01 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 16:41:17 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/29 20:26:57 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <limits.h>
 
-static void	sort_a_top2(t_s_hold *st)
+static int	get_max(t_list *stack)
 {
-	if (get_first(st->stack_a) > get_second(st->stack_a))
-		swap_a(st);
-}
+	int		max;
 
-static void	sort_a_top2_rev(t_s_hold *st)
-{
-	if (get_first(st->stack_a) < get_second(st->stack_a))
-		swap_a(st);
-}
-
-static void	merge_to_b(t_s_hold *st, int left, int right)
-{
-	int		total;
-
-
-	total = left + right;
-	while (total > 0)
+	max = 0;
+	while (stack)
 	{
-		if (left > 0)
+		if (*(int*)stack->content > max)
+			max = *(int*)stack->content;
+		stack = stack->next;
+	}
+	return (max);
+}
+
+static int	get_best_rotate(t_s_hold *st, int a_len, int curr)
+{
+	int			best_dir;
+	int			best_result;
+	int			count;
+	int			heuristic;
+	int			save;
+	int			max;
+
+	best_result = INT_MAX;
+	max = get_max(st->stack_a);
+	save = INT_MAX;
+	count = curr;
+	while (count <= max)
+	{
+		best_dir = get_closest_dir2(st->stack_a, count, a_len);
+		heuristic = ft_abs(best_dir) + ft_abs(curr - count);
+		if (heuristic < save)
 		{
-			if (get_first(st->stack_a) > get_first(st->stack_b))
-			{
-				push_b_bot(st);
-				left--;
-				total--;
-			}
-			else
-			{
-				rotate_b(st);
-				total--;
-			}
+			best_result = best_dir;
+			save = heuristic;
 		}
-		else
-			while (total > 0)
-				rotate_b(st);
+		count++;
 	}
+	return (best_result);
 }
 
-// I'm not even sure if this would work. Too tired right now to think straight.
-static void	sort_a_remain(t_s_hold *st, int i)
+static int	has_val(t_list *stack, int curr)
 {
-	while (!is_sorted_rev(st->stack_a))
+	while (stack)
 	{
-		if (get_first(st->stack_a) < get_second(st->stack_a))
-			swap_a(st);
-		else if (get_first(st->stack_a) < get_last(st->stack_a))
-			rev_rotate_a(st);
-		else
-		{
-			push_b(st);
-			i++;
-		}
+		if (*(int*)stack->content == curr)
+			return (1);
+		stack = stack->next;
 	}
-	while (i > 0)
-	{
-		push_a(st);
-		i--;
-		if (!is_sorted_rev(st->stack_a))
-			sort_a_remain(st, i);
-	}
+	return (0);
 }
 
-void		merge_sort(t_s_hold *st)
+void		rate_rotate(t_s_hold *st)
 {
-	int		curr;
+	int			best_rotate;
+	int			a_len;
+	int			s_len;
+	int			curr;
 
-	curr = 2;
-	while (ft_lstlen(st->stack_a) > curr * 2)
+	a_len = ft_lstlen(st->stack_a);
+	s_len = a_len;
+	curr = 1;
+	while (a_len > 0)
 	{
-		sort_a_top2(st);
-		push_b(st);
-		push_b(st);
-		sort_a_top2_rev(st);
-		merge_to_b(st, curr, curr);
+		best_rotate = get_best_rotate(st, a_len, curr);
+		if (best_rotate > 0)
+			while (best_rotate-- > 0)
+				rotate_a(st, 0);
+		else if (best_rotate < 0)
+			while (best_rotate++ < 0)
+				rev_rotate_a(st, 0);
+		push_b(st, 0);
+		while (has_val(st->stack_b, curr))
+			curr++;
+		a_len--;
 	}
-	if (ft_lstlen(st->stack_a) < curr * 2 && ft_lstlen(st->stack_a) != 0)
-	{
-		sort_a_remain(st, 0);
-		merge_to_b(st, ft_lstlen(st->stack_a), curr * 2);
-	}
-	curr *= 2;
-	while (ft_lstlen(st->stack_b) > curr * 2)
-	{
-		merge_to_a(st, curr, curr
-		//sort_a_top2(st);
-		//push_b(st);
-		//push_b(st);
-		//sort_a_top2_rev(st);
-		//merge_to_b(st, curr, curr);
-	}
+	put_back(st, s_len);
 }
