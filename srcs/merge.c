@@ -6,7 +6,7 @@
 /*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 05:59:56 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/28 17:56:58 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/29 15:57:56 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ int			get_closest_dir(t_list *lst, int target, int lstlen)
 	return (best);
 }
 
-int			get_closest_dir2(t_list *lst, int target)
+int			get_closest_dir2(t_list *lst, int target, int lstlen)
 {
-	int		best;
 	int		i;
 	int		curr;
 	int		half;
@@ -48,29 +47,30 @@ int			get_closest_dir2(t_list *lst, int target)
 	if (*(int*)lst->content == target)
 		return (0);
 	i = 0;
-	best = ft_lstlen(lst);
-	half = best / 2;
+	half = lstlen / 2;
 	while (lst)
 	{
 		if (i > half)
-			curr = i - target;
+			curr = i - lstlen;
 		else
 			curr = i;
-		if (*(int*)lst->content == target && ft_abs(curr) < ft_abs(best))
-			best = curr;
+		if (*(int*)lst->content == target)
+			return (curr);
 		i++;
 		lst = lst->next;
 	}
-	return (best);
+	return (lstlen);
 }
 
 void		put_back(t_s_hold *st, int size)
 {
 	int		side;
+	int		lstlen;
 
+	lstlen = ft_lstlen(st->stack_b);
 	while (size > 0)
 	{
-		side = get_closest_dir2(st->stack_b, size);
+		side = get_closest_dir2(st->stack_b, size, lstlen);
 		while (side != 0)
 		{
 			if (side < 0)
@@ -85,6 +85,7 @@ void		put_back(t_s_hold *st, int size)
 			}
 		}
 		push_a(st, 0);
+		lstlen--;
 		size--;
 	}
 }
