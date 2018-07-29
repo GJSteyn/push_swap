@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   visualizer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gsteyn <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gsteyn <gsteyn@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/20 07:41:46 by gsteyn            #+#    #+#             */
-/*   Updated: 2018/07/21 13:38:18 by gsteyn           ###   ########.fr       */
+/*   Updated: 2018/07/29 15:53:23 by gsteyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ static void		print_stack(t_list *lst, int *x, int y, int max)
 
 	while (lst)
 	{
-		i = max;
+		i = 1;
 		y = *(int*)lst->content;
-		get_color(y, max);
-		while (i > y)
-		{
-			mvprintw(i, *x, "#");
-			i--;
-		}
-		while (i >= 1)
+		while (i < max - y)
 		{
 			wattron(stdscr, COLOR_PAIR(5));
 			mvprintw(i, *x, " ");
-			i--;
+			i++;
+		}
+		get_color(y, max);
+		while (i <= max)
+		{
+			mvprintw(i, *x, "#");
+			i++;
 		}
 		refresh();
 		(*x)++;
@@ -59,6 +59,7 @@ void			visualize(t_s_hold *st)
 	tmp = st->stack_b;
 	x = 0;
 	y = 0;
+	wattron(stdscr, COLOR_PAIR(5));
 	mvprintw(0, 0, "Push_Swap Visualizer!");
 	max = ft_lstlen(st->stack_a) + ft_lstlen(st->stack_b);
 	wattron(stdscr, COLOR_PAIR(1));
